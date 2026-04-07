@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
       footerCopy: "© 2026 Natalia Bouhlal",
       footerRole: "Frontend Developer • Built with ❤️",
 
+
+
+      skillsTitle: "С чем я работаю",
       skillCatFrontend: "Frontend-разработка",
       skillDescFrontend: "Экосистема React и TypeScript.",
       skillLabelFoundations: "Основы",
@@ -178,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       footerCopy: "© 2026 Natalia Bouhlal",
       footerRole: "Frontend Developer • Built with ❤️",
 
-
+      skillsTitle: "What I work with",
       skillCatFrontend: "Frontend Development",
       skillDescFrontend: "React Ecosystem & TypeScript.",
       skillLabelFoundations: "Foundations",
@@ -318,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
       footerCopy: "© 2026 Natalia Bouhlal",
       footerRole: "Frontend-Entwickler • Mit ❤️ erstellt",
 
+      skillsTitle: "Womit ich arbeite",
       skillCatFrontend: "Frontend-Entwicklung",
       skillDescFrontend: "React Ecosystem & TypeScript.",
       skillLabelFoundations: "Grundlagen",
