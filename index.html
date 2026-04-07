@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио Натальи</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body data-lang="ru" style="scroll-behavior: auto;">
+  <header>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item" data-key="navHome"><a href="#hero">Главная</a></li>
+        <li class="nav-item" data-key="navAbout"><a href="#about">О себе</a></li>
+        <li class="nav-item" data-key="navResume"><a href="#resume">Профессиональные компетенции</a></li>
+        <li class="nav-item" data-key="navProjects"><a href="#projects">Проекты</a></li>
+        <li class="nav-item" data-key="navContact"><a href="#contact">Контакты</a></li>
+      </ul>
+
+      <div class="nav-overlay"></div>
+
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-right">
+        <div class="custom-select-wrapper">
+          <div class="custom-select" id="languageSwitcher">
+            <div class="selected">
+              <img src="./img/flags/de.svg" class="flag-img" alt="DE">
+              <span class="lang-code">DE</span>
+              <span class="arrow">▼</span>
+            </div>
+            <ul class="options">
+              <li data-lang="de"><img src="./img/flags/de.svg" class="flag-img"> DE</li>
+              <li data-lang="en"><img src="./img/flags/gb.svg" class="flag-img"> EN</li>
+              <li data-lang="ru"><img src="./img/flags/ru.svg" class="flag-img"> RU</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-image">
+      <img src="./img/My_foto.png" alt="Наталья">
+    </div>
+    <div class="hero-content">
+      <h1 id="heroTitle">Привет, я Наталья,</h1>
+
+      <p id="heroSubtitle"><span id="typing" class="typing"></span></p>
+
+      <div class="hero-buttons">
+        <a href="#projects" id="btnPortfolio" class="btn btn-primary">Мои работы</a>
+        <a href="#contact" id="btnContact" class="btn btn-secondary">Связаться со мной</a>
+      </div>
+    </div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </section>
+
+
+  <section id="about">
+    <h2 id="aboutTitle">О себе</h2>
+
+    <p id="aboutText">Люблю превращать идеи в красивые и удобные веб‑страницы с <strong>HTML, CSS, JavaScript и
+        React</strong>.</p>
+
+    <p id="aboutExtra1">Когда не пишу код, играю с <strong>AI‑инструментами</strong>, экспериментирую с дизайном и
+      наслаждаюсь путешествиями.</p>
+
+    <p id="aboutExtra2">Давай создадим что-то классное вместе!</p>
+
+    <h3 id="skillsTitle" class="skills-title">С чем я работаю</h3>
+
+   <div class="bento-skills">
+  <div class="bento-card item-front highlight-blue">
+    <div class="card-content-frontend">
+      <span class="category" id="skillCatFrontend">Frontend-разработка</span>
+      <h3 id="skillTitleFrontend">React + TypeScript</h3>
+      <div class="main-tech-strip">
+        <div class="tech-item-main">
+          <img src="./img/icons/react.svg" alt="React">
+          <img src="./img/icons/typescript.svg" alt="TS">
+        </div>
+        <p class="description" id="skillDescFrontend">Экосистема React и TypeScript.</p>
+      </div>
+      <div class="foundations-strip">
+        <span class="mini-label" id="skillLabelFoundations">Основы</span>
+        <div class="foundations-icons">
+          <img src="./img/icons/html5.svg" alt="HTML">
+          <img src="./img/icons/css3.svg" alt="CSS">
+          <img src="./img/icons/javascript.svg" alt="JS">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bento-card item-back highlight-green">
+    <div class="card-content-horizontal">
+      <div class="text-side">
+        <span class="category" id="skillCatBackend">Backend и логика</span>
+        <h3 id="skillTitleBackend">Node.js + TypeScript</h3>
+        <p class="description" id="skillDescBackend">Серверная логика, разработка API и производительность.</p>
+      </div>
+      <div class="icons-side">
+        <img src="./img/icons/nodejs.svg" alt="Node" class="skill-icon-med">
+        <img src="./img/icons/typescript.svg" alt="TS" class="skill-icon-med">
+      </div>
+    </div>
+  </div>
+
+  <div class="bento-card item-db highlight-orange">
+    <div class="card-content centered">
+      <span class="category" id="skillCatDb">Базы данных</span>
+      <div class="icon-row-med">
+        <img src="./img/icons/mysql.svg" alt="SQL">
+        <img src="./img/icons/mongodb.svg" alt="MongoDB">
+      </div>
+      <p class="description" id="skillDescDb">SQL и NoSQL.</p>
+    </div>
+  </div>
+
+  <div class="bento-card item-system highlight-grey">
+    <div class="card-content centered">
+      <span class="category" id="skillCatTools">Инструменты и системы</span>
+      <div class="icon-row">
+        <img src="./img/icons/docker.svg" alt="Docker">
+        <img src="./img/icons/git.svg" alt="Git">
+        <img src="./img/icons/linux-tux.svg" alt="Linux">
+      </div>
+      <p class="description" id="skillDescTools">Контейнеризация, контроль версий и администрирование.</p>
+    </div>
+  </div>
+
+  <div class="bento-card item-wide highlight-teal">
+    <div class="card-content-horizontal">
+      <div class="text-side">
+        <span class="category" id="skillCatAi">Современные инструменты</span>
+        <h3 id="skillTitleAi">AI-разработка</h3>
+        <p class="description" id="skillDescAi">Эффективное программирование с Cursor, Copilot и LLM.</p>
+      </div>
+      <img src="./img/icons/ai.svg" alt="AI" class="ai-large-icon">
+    </div>
+  </div>
+
+  <div class="bento-card card-softskills highlight-grey">
+    <div class="card-content centered">
+      <span class="category" id="skillCatSoft">Гибкие навыки</span>
+      <img src="./img/icons/agile-team.svg" alt="Agile" class="skill-icon-small">
+      <p class="description" id="skillDescSoft">Agile-мышление, работа в команде, коммуникация.</p>
+    </div>
+  </div>
+
+  <div class="bento-card item-ui highlight-purple">
+    <div class="card-content centered">
+      <span class="category" id="skillCatUi">UI / Дизайн</span>
+      <div class="icon-row-med">
+        <img src="./img/icons/figma.svg" alt="Figma">
+        <img src="./img/icons/responsive.jpg" alt="Responsive">
+      </div>
+      <p class="description" id="skillDescUi">Figma и адаптивная верстка.</p>
+    </div>
+  </div>
+</div>
+  </section>
+
+  <section id="resume">
+    <div class="container">
+      <h2 id="resumeTitle">Профессиональные компетенции</h2>
+
+      <div class="resume-container">
+        <div class="resume-column">
+          <h3 id="careerTitle" class="skills-title">Профессиональный путь</h3>
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <span class="timeline-date" id="job1Data">07/2025 — Наст. время</span>
+              <h4 id="job1">Разработка веб-приложений и интеграция AI-решений</h4>
+              <p id="job1Place">IT Career Hub, Берлин</p>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <ul>
+                    <li id="job1Task1">Интенсивное обучение: HTML5, CSS3, JavaScript (ES6+), React, Node.js.</li>
+                    <li id="job1Task2">Создание веб-сервисов с интеграцией нейросетей (API OpenAI/другие).</li>
+                    <li id="job1Task3">Разработка проектов по современным стандартам IT-рынка Германии.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">06/2022 — 02/2025</span>
+              <h4 id="job2">Изучение языка и интеграция в Германии</h4>
+              <p id="job2Place">Академии KEB / CEB, Диллинген/Мерциг</p>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+
+                  <ul>
+                    <li id="job2Task1">Последовательное изучение немецкого языка в сертифицированных академиях (KEB
+                      Dillingen, CEB Akademie GmbH Merzig, gaertner hkk Dillingen).</li>
+                    <li id="job2Task2">Развитие профессиональной коммуникации и навыков ведения документации для работы
+                      в
+                      IT.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">09/2020 — 05/2022</span>
+              <h4 id="job3">Старший преподаватель кафедры ИТ</h4>
+              <p id="job3Place">зовский морской институт, Одесской национальной морской академии, Мариуполь, Украина</p>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+
+                  <ul>
+                    <li id="job3Task1">Разработка учебных программ и учебно-методических материалов и курсов по
+                      информационным технологиям.</li>
+                    <li id="job3Task2">Проведение лекций и практических занятий для студентов (Microsoft Access,
+                      Word,PowerPoint, Excel,
+                      Google Workspace, MathCAD).</li>
+                    <li id="job3Task3">Автор научных статей и публикаций в профильных изданиях.</li>
+                    <li id="job3Task4">Интеграция Google Workspace и MS Office в учебный процесс для оптимизации
+                      коммуникаций и совместной работы.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">09/2017 — 05/2022</span>
+              <h4 id="job4">Старший преподаватель кафедры биомедицинской инженерии</h4>
+              <p id="job4Place">Приазовский государственный технический университет, г. Мариуполь, Украина</p>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+
+                  <ul>
+                    <li id="job4Task1">проведение лекций и практик по цифровым технологиям, телемедицине и сетевым
+                      технологиям.
+                      Подготовка полного цикла учебно-методических материалов(Excel/Access, Python, MATLAB,
+                      медицинские информационные системы, сетевые технологии).</li>
+                    <li id="job4Task2">Курирование дипломных проектов студентов и академическое наставничество</li>
+                    <li id="job4Task3">Участие в аккредитации образовательных программ: подготовка документации и
+                      отчетов
+                    </li>
+                    <li id="job4Task4">Член жюри Малой академии наук (МАН), рецензирование и экспертная оценка работ в
+                      секциях
+                      «Медицина», «Биология» и «Экология» на городском и областном уровнях.</li>
+                    <li id="job4Task5">Внедрение инструментов облачной коллаборации для организации совместной проектной
+                      деятельности, оперативной обратной связи и автоматизации контроля знаний.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">07/2010 — 04/2017</span>
+              <h4 id="job5">Семейный период и самообразование в ИТ</h4>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+
+                  <ul>
+                    <li id="job5Task1">Самостоятельное изучение основ IT (HTML, CSS, основы программирования).</li>
+                    <li id="job5Task2">Разработка учебных материалов для дальнейшей работы в сфере высшего образования.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">11/2001 — 06/2010</span>
+              <h4 id="job6">Старший преподаватель / Лаборант</h4>
+              <p id="job6Place">ПГТУ, Мариуполь, Украина</p>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+
+                  <ul>
+                    <li id="job6Task1">Работа с иностранными студентами: практические занятия и лекции (Python, Access,
+                      SQL,
+
+                      Excel, Word, PowerPoint, LAN, TCP/IP).</li>
+                    <li id="job6Task2">Подготовка учебных материалов информационным технологиям</li>
+                    <li id="job6Task3">Продвижение с позиции лаборанта до преподавателя информатики</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-column">
+          <h3 id="educationTitle" class="skills-title">Образование</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-date">12/2007 — 12/2011</span>
+              <h4 id="edu1">Аспирантура</h4>
+              <p id="edu1Place">Приазовский государственный технический университет, г. Мариуполь, Украина</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">09/2001 — 06/2007</span>
+              <h4 id="edu2">Специалист по информатике и прикладной математике</h4>
+              <p id="edu2Place">Приазовский государственный технический университет, г. Мариуполь, Украина</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">09/2001 — 06/2006</span>
+              <h4 id="edu3">Бакалавр по прикладной математике</h4>
+              <p id="edu3Place">Приазовский государственный технический университет, г. Мариуполь, Украина</p>
+            </div>
+          </div>
+
+          <h3 id="extraSkillsTitle" class="skills-title" style="margin-top: 40px;">Дополнительно</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span id="langTitle" class="timeline-date">Языки</span>
+              <h4 id="langBtn">Владение языками</h4>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+
+                  <ul>
+                    <li id="lang1">Немецкий (B2/C1).</li>
+                    <li id="lang2">Английский (B1).</li>
+                    <li id="lang3">Укр/Рус (Родной)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span id="volTitle" class="timeline-date">Волонтерство</span>
+              <h4 id="volBtn">Социальная деятельность</h4>
+              <button class="accordion-button lang-accordion-btn">Подробнее</button>
+              <div class="accordion-content">
+                <div class="accordion-inner">
+                  <ul>
+                    <li id="volText">С 2022 года — активная помощь в организации работы «Gute Zweck Laden», Шмельц,
+                      Германия.</li>
+                    <li><a href="https://gzl-schmelz.de/index.php/de/">Der GUTE ZWECK LADEN Schmelz</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="projects">
+    <div class="container">
+      <h2 id="projectsTitle">Проекты</h2>
+
+      <div class="slider-wrapper">
+        <button class="nav-btn prev" id="prevBtn" aria-label="Предыдущий проект">❮</button>
+
+        <div class="slider-window">
+          <div class="project-cards">
+
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./img/projects/Prodj_1.png" alt="Pet Shop Project">
+              </div>
+              <div class="project-info">
+                <h3>My Pet Shop</h3>
+                <button class="btn-details"></button>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="btn-git">GitHub</a>
+                  <a href="#" target="_blank" class="btn-live">Live Demo</a>
+                </div>
+
+                <div class="hidden-modal-data" style="display:none;">
+                  <p class="modal-desc-text">
+                    Разработала и подготовила к релизу полноценное E-commerce решение для зоомагазина. В ходе работы
+                    спроектировала компонентную архитектуру на React, обеспечила бесшовную навигацию и реализовала
+                    сложную логику управления товарными запасами в корзине. Особое внимание уделила чистоте кода и
+                    соответствию современным стандартам веб-разработки.
+                  </p>
+
+                  <div class="modal-tech-stack">
+                    <span>React</span>
+                    <span>Redux Toolkit</span>
+                    <span>Axios</span>
+                    <span>React Router Dom</span>
+                    <span>Formik / Yup</span>
+                    <span>REST API</span>
+                  </div>
+
+                  <div class="modal-highlights-data">
+                    <div class="feature-small">
+                      <strong>State Management:</strong> Внедрена технология Redux Toolkit для управления глобальным
+                      состоянием, что позволило синхронизировать корзину, избранное и фильтры между всеми страницами
+                      приложения.
+                    </div>
+                    <div class="feature-small">
+                      <strong>API Integration:</strong> Оптимизирован процесс получения данных с бэкенда через Axios,
+                      настроила систему перехватчиков (interceptors) и автоматизировала обработку ошибок и состояний
+                      загрузки.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Routing & Navigation:</strong> Реализована многоуровневая система маршрутизации с помощью
+                      React Router Dom, включая динамические сегменты для карточек товаров и защищенные переходы.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Form Automation:</strong> Автоматизирован процесс сбора и проверки данных покупателя,
+                      интегрировав Formik и Yup, что свело к минимуму риск ошибок при оформлении заказа.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Performance & UX:</strong> Проведен рефакторинг компонентов для предотвращения лишних
+                      рендеров и адаптирован интерфейс под все типы устройств, обеспечив высокую скорость работы
+                      приложения.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./img/projects/Prodj_2.png" alt="Events Platform">
+              </div>
+              <div class="project-info">
+                <h3>Events Platform</h3>
+                <button class="btn-details"></button>
+                <div class="project-links">
+                  <a href="https://github.com/BouhlalNatalia/eventsnear.git" target="_blank" class="btn-git">GitHub</a>
+                  <a href="https://bouhlalnatalia.github.io/eventsnear/" target="_blank" class="btn-live">Live Demo</a>
+                </div>
+
+                <div class="hidden-modal-data" style="display:none;">
+                  <p class="modal-desc-text">
+                    Многостраничная платформа для поиска и бронирования мероприятий. Реализована сложная система
+                    динамической фильтрации событий по категориям и датам, а также спроектирован интуитивно понятный
+                    поьзовательский путь от главной страницы до выбора конкретного ивента.
+                  </p>
+                  <div class="modal-tech-stack">
+                    <span>HTML5</span><span>SASS/SCSS</span><span>JavaScript</span><span>CSS3</span><span>Gulp</span><span>Leaflet
+                      API</span>
+                  </div>
+                  <div class="modal-highlights-data">
+                    <div class="feature-small">
+                      <strong>Динамическая фильтрация:</strong> Реализована логика отбора мероприятий по 4 критериям:
+                      типу, формату (дистанция), категории и дате.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Архитектура БЭМ:</strong> Использована строгая методология именования для создания
+                      независимых и переиспользуемых UI-компонентов.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Workflow & Сборка:</strong> Автоматизация процессов с помощью Gulp и использование
+                      препроцессора SASS для эффективного управления стилями.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Интерактивная карта:</strong> Интеграция Leaflet API для визуализации локаций мероприятий
+                      и улучшения UX-взаимодействия.
+                    </div>
+                    <div class="feature-small">
+                      <strong>SEO & Доступность:</strong> Оптимизированная семантическая верстка (HTML5) для корректной
+                      индексации и высокой доступности интерфейса.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Responsive Design:</strong> Глубокая проработка адаптивности, обеспечивающая стабильную
+                      работу фильтров и сеток на смартфонах и десктопах.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./img/projects/Prodj_3.png" alt="HOTSAUCE Conference">
+              </div>
+              <div class="project-info">
+                <h3>HOTSAUCE Conference</h3>
+                <button class="btn-details"></button>
+                <div class="project-links">
+                  <a href="https://github.com/BouhlalNatalia/HOTSAUCE_Tech_-Conference_-Landing_-Page.git"
+                    target="_blank" class="btn-git">GitHub</a>
+                  <a href="https://bouhlalnatalia.github.io/HOTSAUCE_Tech_-Conference_-Landing_-Page/" target="_blank"
+                    class="btn-live">Live Demo</a>
+                </div>
+
+                <div class="hidden-modal-data" style="display:none;">
+                  <p class="modal-desc-text">Профессиональный адаптивный лендинг для технологической конференции
+                    HOTSAUCE. Проект реализован как полноценный кейс с акцентом на чистую архитектуру кода, сложную
+                    геометрическую верстку и интерактивные пользовательские интерфейсы. Особое внимание уделено
+                    UX-деталям: плавной навигации, информативным секциям цен и удобному мобильному представлению.</p>
+                  <div class="modal-tech-stack">
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>SASS (SCSS)</span><span>Gulp</span>
+                  </div>
+                  <div class="modal-highlights-data" style="display:none;">
+                    <div class="feature-small">
+                      <strong>Архитектура БЭМ:</strong> Реализована строгая модульная структура кода, обеспечивающая
+                      полную независимость компонентов и чистоту стилей.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Layout (Grid & Flex):</strong> Спроектирована сложная адаптивная сетка для секций спикеров
+                      и расписания, корректно работающая на всех типах устройств.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Креативная стилизация:</strong> Применены техники работы с псевдоэлементами
+                      (::before/::after) и SVG для создания уникального эффекта «перфорированного билета».
+                    </div>
+                    <div class="feature-small">
+                      <strong>Интерактивный UI:</strong> Интегрированы FAQ-аккордеоны и система уведомлений на Vanilla
+                      JavaScript с использованием плавных CSS-анимаций.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Полный адаптивный цикл:</strong> Произведена оптимизация интерфейса под 5 ключевых
+                      разрешений (от 390px до 1920px).
+                    </div>
+                    <div class="feature-small">
+                      <strong>Workflow & SEO:</strong> Использованы SASS и Gulp для автоматизации сборки, а также
+                      семантическая разметка HTML5 для SEO-оптимизации.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img src="./img/projects/Prodj_1.png" alt="Pet Shop Project">
+              </div>
+              <div class="project-info">
+                <h3>My Pet Shop</h3>
+                <button class="btn-details"></button>
+                <div class="project-links">
+                  <a href="#" target="_blank" class="btn-git">GitHub</a>
+                  <a href="#" target="_blank" class="btn-live">Live Demo</a>
+                </div>
+
+                <div class="hidden-modal-data" style="display:none;">
+                  <p class="modal-desc-text">
+                    Разработала и подготовила к релизу полноценное E-commerce решение для зоомагазина. В ходе работы
+                    спроектировала компонентную архитектуру на React, обеспечила бесшовную навигацию и реализовала
+                    сложную логику управления товарными запасами в корзине. Особое внимание уделила чистоте кода и
+                    соответствию современным стандартам веб-разработки.
+                  </p>
+
+                  <div class="modal-tech-stack">
+                    <span>React</span>
+                    <span>Redux Toolkit</span>
+                    <span>Axios</span>
+                    <span>React Router Dom</span>
+                    <span>Formik / Yup</span>
+                    <span>REST API</span>
+                  </div>
+
+                  <div class="modal-highlights-data">
+                    <div class="feature-small">
+                      <strong>State Management:</strong> Внедрена технология Redux Toolkit для управления глобальным
+                      состоянием, что позволило синхронизировать корзину, избранное и фильтры между всеми страницами
+                      приложения.
+                    </div>
+                    <div class="feature-small">
+                      <strong>API Integration:</strong> Оптимизирован процесс получения данных с бэкенда через Axios,
+                      настроила систему перехватчиков (interceptors) и автоматизировала обработку ошибок и состояний
+                      загрузки.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Routing & Navigation:</strong> Реализована многоуровневая система маршрутизации с помощью
+                      React Router Dom, включая динамические сегменты для карточек товаров и защищенные переходы.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Form Automation:</strong> Автоматизирован процесс сбора и проверки данных покупателя,
+                      интегрировав Formik и Yup, что свело к минимуму риск ошибок при оформлении заказа.
+                    </div>
+                    <div class="feature-small">
+                      <strong>Performance & UX:</strong> Проведен рефакторинг компонентов для предотвращения лишних
+                      рендеров и адаптирован интерфейс под все типы устройств, обеспечив высокую скорость работы
+                      приложения.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-btn next" id="nextBtn" aria-label="Следующий проект">❯</button>
+
+
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-header">
+      <span class="line"></span>
+      <h2 id="contactTitle" class="contact-title">← Свяжитесь со мной →</h2>
+      <span class="line"></span>
+    </div>
+    <form class="contact-form">
+      <div class="input-row">
+        <input type="text" id="contactName" placeholder="Имя">
+        <input type="email" id="contactEmail" placeholder="Email">
+        <input type="text" id="contactSubject" placeholder="Тема">
+      </div>
+      <textarea id="contactMessage" placeholder="Ваше сообщение"></textarea>
+      <button type="submit" id="contactBtn" class="btn-submit">Отправить</button>
+    </form>
+    <div class="social-icons">
+      <a href="https://github.com/BouhlalNatalia" class="icon-circle" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/natalia-bouhlal-8994ab3b4" class="icon-circle" target="_blank"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://t.me/umkaser84" class="icon-circle" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p id="footerCopy">© 2026 Natalia Bouhlal</p>
+    <p id="footerRole">Frontend Developer • Built with ❤️</p>
+  </footer>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <div id="modalTags" class="project-tools"></div>
+
+        <h3 id="modalDescTitle">Описание проекта:</h3>
+        <p id="modalDescription" class="modal-desc-text"></p>
+
+        <div class="modal-highlights-container">
+          <h3 id="modalFeaturesTitle">Ключевые особенности проекта:</h3>
+          <div id="modalHighlights"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+  <script src="./js/lang.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () { emailjs.init("vg9rP5yVVjR7Jls_N"); })();
+  </script>
+</body>
+
+</html>
