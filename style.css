@@ -105,7 +105,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 clamp(10px, 3vw, 40px);
-    background: #fff;
     position: relative;
     z-index: 1000;
 }
@@ -1498,7 +1497,60 @@ footer {
 
 
 
+@media (max-width: 1000px) {
+        .slider-wrapper {
+        display: grid;
+        grid-template-areas:
+            "window window window"
+            "prev dots next";
+        justify-items: center;
+        align-items: center;
+    }
 
+    .slider-window {
+        order: 1;
+        width: 100%;
+    }
+
+    .nav-btn.prev {
+        order: 2;
+    }
+
+    .slider-dots {
+        order: 3;
+    }
+
+    .nav-btn.next {
+        order: 4;
+    }
+
+    .nav-btn {
+        position: static;
+        display: flex;
+        width: 45px;
+        height: 45px;
+        margin: 0;
+    }
+
+
+
+    .slider-window {
+        grid-area: window;
+    }
+
+    #prevBtn {
+        grid-area: prev;
+    }
+
+    #sliderDots {
+        grid-area: dots;
+        margin: 0 10px;
+    }
+
+    #nextBtn {
+        grid-area: next;
+    }
+}
 
 
 @media (max-width: 768px) {
@@ -1621,12 +1673,14 @@ footer {
 
     #heroSubtitle {
         font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
     .hero-buttons {
         flex-direction: column;
         gap: 15px;
         width: 100%;
+         padding-bottom: 20px;
     }
 
     .hero-buttons .btn {
@@ -1662,6 +1716,16 @@ footer {
     .card-softskills {
         grid-column: span 2;
         grid-row: auto;
+    }
+
+
+    .card-content-horizontal {
+        gap: 100px;
+    }
+
+    .icons-side {
+        gap: 50px;
+
     }
 
     .item-db,
@@ -1745,63 +1809,7 @@ footer {
         margin-bottom: 20px;
     }
 
-    .slider-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .slider-window {
-        order: 1;
-        width: 100%;
-    }
-
-    .nav-btn.prev {
-        order: 2;
-    }
-
-    .slider-dots {
-        order: 3;
-    }
-
-    .nav-btn.next {
-        order: 4;
-    }
-
-    .nav-btn {
-        position: static;
-        display: flex;
-        width: 45px;
-        height: 45px;
-        margin: 0;
-    }
-
-    .slider-wrapper {
-        display: grid;
-        grid-template-areas:
-            "window window window"
-            "prev dots next";
-        justify-items: center;
-        align-items: center;
-    }
-
-    .slider-window {
-        grid-area: window;
-    }
-
-    #prevBtn {
-        grid-area: prev;
-    }
-
-    #sliderDots {
-        grid-area: dots;
-        margin: 0 10px;
-    }
-
-    #nextBtn {
-        grid-area: next;
-    }
+  
 
     .project-card {
         padding: 15px;
@@ -1911,6 +1919,7 @@ footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 20px;
     }
 
     .ai-large-icon {
@@ -1948,7 +1957,7 @@ footer {
     #heroSubtitle {
         font-size: 1rem;
     }
-
+ 
     .blob {
         opacity: 0.4;
     }
@@ -1973,6 +1982,15 @@ footer {
         font-size: 0.65rem;
     }
 
+    .icon-row,
+    .icon-row-med {
+        gap: 25px;
+    }
+
+    .icons-side {
+        gap: 30px;
+    }
+
     #projects {
         padding: 15px 10px;
     }
@@ -1985,8 +2003,8 @@ footer {
     }
 
     #projectsTitle {
-        order: 1;
-        margin-bottom: 15px;
+        order: 0;
+        margin-bottom: 5px;
     }
 
     .project-card {
@@ -2137,10 +2155,11 @@ footer {
         text-align: left;
         padding: 12px 0;
     }
-}
-
-@media screen and (max-width: 400px) {
-    .nav-menu.active {
+        .nav-menu.active {
         top: 36px;
+    }
+       .hero-buttons {
+    
+         padding-bottom: 10px;
     }
 }
