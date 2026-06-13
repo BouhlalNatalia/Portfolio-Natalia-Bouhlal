@@ -397,7 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lang2: "Englisch (B1).",
       lang3: "Ukr/Rus (Muttersprache)",
       volBtn: "Soziale Tätigkeit",
-      volText: "Seit 2022 — aktive Freiwilligenarbeit beim 'Gute Zweck Laden', Schmelz, Deutschland.",
+      volText: "Seit 2022 — aktive ehrenamtliche Tätigkeit beim 'Gute Zweck Laden', Schmelz, Deutschland.",
 
       modalDescTitle: "Projektbeschreibung:",
       modalFeaturesTitle: "Wichtigste Projektmerkmale:",
