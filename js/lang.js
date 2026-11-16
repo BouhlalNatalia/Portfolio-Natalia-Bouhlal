@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       footerCopy: "© 2026 Natalia Bouhlal",
       footerRole: "Frontend Developer • Built with ❤️",
 
-
-
       skillsTitle: "С чем я работаю",
       skillCatFrontend: "Frontend-разработка",
       skillDescFrontend: "Экосистема React и TypeScript.",
@@ -59,13 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
       accordionBtn: "Подробнее",
       accordionBtnClose: "Скрыть детали",
 
-
-      // Резюме
       resumeTitle: "Профессиональные компетенции",
       careerTitle: "Профессиональный путь",
-      job1Data: "07/2025 — Наст. время",
+
+      jobPracticeDate: "08/2026 — 11/2026",
+      jobPracticeTitle: "Веб-разработчик (практика)",
+      jobPracticePlace: "New Life New Beginning",
+
+      job1Data: "07/2025 — 05/2026",
       job1: "Разработка веб-приложений и интеграция AI-решений",
-      job1Place: "IT Career Hub, Berlin",
+      job1Place: "IT Career Hub, Берлин",
       job1Task1: "Интенсивное обучение: HTML5, CSS3, JavaScript (ES6+), React, Node.js.",
       job1Task2: "Создание веб-сервисов с интеграцией нейросетей (API OpenAI/другие).",
       job1Task3: "Разработка проектов по современным стандартам IT-рынка Германии.",
@@ -107,20 +108,26 @@ document.addEventListener("DOMContentLoaded", () => {
       edu2Place: "Приазовский государственный технический университет, Мариуполь",
       edu3: "Бакалавр по прикладной математике",
       edu3Place: "Приазовский государственный технический университет, Мариуполь",
+
       langTitle: "Языки",
-      volTitle: "Волонтерская деятельность",
       extraSkillsTitle: "Дополнительно",
       langBtn: "Владение языками",
       lang1: "Немецкий (B2/C1).",
       lang2: "Английский (B1).",
-      lang3: "Укр/Рус (Родной)",
+      lang3: "Украинский / Русский (родные).",
+
+      volTitle: "Волонтёрская деятельность",
+      jobVolunteerDate: "С 11/2026 — по настоящее время",
+      jobVolunteerTitle: "Профессиональная деятельность",
+      jobVolunteerPlace: "New Life New Beginning",
+      jobVolunteerTask1: "С ноября 2026 года продолжаю сотрудничество с New Life New Beginning на добровольной и безвозмездной основе в качестве веб-разработчика, применяя свои профессиональные навыки и участвуя в дальнейшем развитии проектов.",
+
+      volSocialDate: "С 2022 года",
       volBtn: "Социальная деятельность",
       volText: "С 2022 года — активная помощь в организации работы «Gute Zweck Laden», Шмельц, Германия.",
 
-
       modalDescTitle: "Описание проекта:",
       modalFeaturesTitle: "Ключевые особенности проекта:",
-      projectsTitle: "Проекты",
       btnDetails: "Подробнее →",
 
       projects: [
@@ -153,10 +160,31 @@ document.addEventListener("DOMContentLoaded", () => {
             "<strong>Layout:</strong> Сложная адаптивная сетка (Grid/Flex).",
             "<strong>UI:</strong> Креативные эффекты и интерактивные элементы."
           ]
+        },
+        {
+          title: "ICHGram",
+          desc: "Полнофункциональная социальная сеть для обмена фотографиями и общения. Пользователи могут создавать аккаунты, публиковать фотографии, взаимодействовать с публикациями, подписываться на других пользователей и общаться в режиме реального времени.",
+          highlights: [
+            "<strong>Аутентификация:</strong> Реализованы регистрация, вход в систему и JWT-аутентификация с хешированием паролей с помощью bcrypt.",
+            "<strong>Социальные функции:</strong> Разработаны профили пользователей, публикация фотографий, лайки, комментарии, подписки и уведомления.",
+            "<strong>Общение в реальном времени:</strong> Интегрирован Socket.IO для обмена сообщениями и обновления чатов в режиме реального времени.",
+            "<strong>Облачное хранение изображений:</strong> Интегрирован Cloudinary для хранения фотографий публикаций и аватаров пользователей.",
+            "<strong>Развёртывание:</strong> Приложение размещено на Render, а для хранения данных используется MongoDB Atlas."
+          ]
+        },
+        {
+          title: "My Pet Shop",
+          desc: "Разработала и подготовила к релизу полноценное E-commerce решение для зоомагазина. В ходе работы спроектировала компонентную архитектуру на React, обеспечила бесшовную навигацию и реализовала сложную логику управления товарными запасами в корзине.",
+          highlights: [
+            "<strong>State Management:</strong> Внедрена технология Redux Toolkit для управления состоянием.",
+            "<strong>API Integration:</strong> Оптимизирован процесс получения данных через Axios.",
+            "<strong>Routing:</strong> Реализована многоуровневая система маршрутизации.",
+            "<strong>Automation:</strong> Автоматизирован процесс валидации форм заказа.",
+            "<strong>Performance:</strong> Проведен рефакторинг для ускорения работы приложения."
+          ]
         }
       ]
     },
-
 
     en: {
       navHome: "Home",
@@ -199,14 +227,17 @@ document.addEventListener("DOMContentLoaded", () => {
       skillCatUi: "UI / Design",
       skillDescUi: "Figma & Responsive Design.",
 
-
       accordionBtn: "More details",
       accordionBtnClose: "Hide details",
 
       resumeTitle: "Professional Competencies",
       careerTitle: "Career Path",
 
-      job1Data: "07/2025 — Present",
+      jobPracticeDate: "08/2026 — 11/2026",
+      jobPracticeTitle: "Web Developer (Internship)",
+      jobPracticePlace: "New Life New Beginning",
+
+      job1Data: "07/2025 — 05/2026",
       job1: "Web Development & AI Integration",
       job1Place: "IT Career Hub, Berlin",
       job1Task1: "Intensive training: HTML5, CSS3, JavaScript (ES6+), React, Node.js.",
@@ -250,20 +281,28 @@ document.addEventListener("DOMContentLoaded", () => {
       edu2Place: "Pryazovskyi State Technical University, Mariupol",
       edu3: "Bachelor in Applied Mathematics",
       edu3Place: "Pryazovskyi State Technical University, Mariupol",
+
       langTitle: "Languages",
-      volTitle: "Volunteering",
       extraSkillsTitle: "Additional",
       langBtn: "Language Proficiency",
       lang1: "German (B2/C1).",
       lang2: "English (B1).",
-      lang3: "Ukr/Rus (Native)",
+      lang3: "Ukrainian / Russian (Native).",
+
+      volTitle: "Volunteering",
+      jobVolunteerDate: "Since 11/2026",
+      jobVolunteerTitle: "Professional Activity",
+      jobVolunteerPlace: "New Life New Beginning",
+      jobVolunteerTask1: "Since November 2026, I have continued working with New Life New Beginning on a voluntary, unpaid basis as a web developer, applying my professional skills and contributing to the further development of its projects.",
+
+      volSocialDate: "Since 2022",
       volBtn: "Social Activity",
-      volText: "Since 2022 — active volunteering at 'Gute Zweck Laden', Schmelz, Germany.",
+      volText: "Since 2022 — actively supporting the work of Gute Zweck Laden in Schmelz, Germany.",
 
       modalDescTitle: "Project Description:",
       modalFeaturesTitle: "Key Project Features:",
-      projectsTitle: "Projects",
       btnDetails: "Details →",
+
       projects: [
         {
           title: "My Pet Shop",
@@ -294,6 +333,28 @@ document.addEventListener("DOMContentLoaded", () => {
             "<strong>Layout:</strong> Complex adaptive grid for speakers and schedules.",
             "<strong>Interactive UI:</strong> Vanilla JS accordions and smooth CSS animations."
           ]
+        },
+        {
+          title: "ICHGram",
+          desc: "A full-stack social networking application for photo sharing and communication. Users can create accounts, publish photos, interact with posts, follow other users and communicate through real-time messaging.",
+          highlights: [
+            "<strong>Authentication:</strong> Implemented user registration, login and JWT-based authentication with bcrypt password hashing.",
+            "<strong>Social Features:</strong> Developed user profiles, photo posts, likes, comments, following and notifications.",
+            "<strong>Real-Time Communication:</strong> Integrated Socket.IO for real-time messaging and chat updates.",
+            "<strong>Cloud Image Storage:</strong> Integrated Cloudinary for storing uploaded post images and profile avatars.",
+            "<strong>Deployment:</strong> Deployed the application on Render with MongoDB Atlas as the production database."
+          ]
+        },
+        {
+          title: "My Pet Shop",
+          desc: "Developed and prepared for release a full-scale E-commerce solution for a pet store. Designed a component-based architecture using React, ensured seamless navigation, and implemented complex shopping cart inventory management logic.",
+          highlights: [
+            "<strong>State Management:</strong> Implemented Redux Toolkit for global state management.",
+            "<strong>API Integration:</strong> Optimized data fetching via Axios and automated error handling.",
+            "<strong>Routing:</strong> Multi-level routing system with dynamic segments.",
+            "<strong>Automation:</strong> Automated checkout data collection and validation.",
+            "<strong>Performance:</strong> Component refactoring to prevent unnecessary re-renders."
+          ]
         }
       ]
     },
@@ -319,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
       contactMessage: "Ihre Nachricht",
       contactBtn: "Senden",
       footerCopy: "© 2026 Natalia Bouhlal",
-      footerRole: "Frontend-Entwickler • Mit ❤️ erstellt",
+      footerRole: "Frontend-Entwicklerin • Mit ❤️ erstellt",
 
       skillsTitle: "Womit ich arbeite",
       skillCatFrontend: "Frontend-Entwicklung",
@@ -329,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
       skillDescBackend: "Serverlogik, API-Entwicklung & Performance.",
       skillCatDb: "Datenbanken",
       skillDescDb: "SQL & NoSQL.",
-      skillCatTools: "Tools & System",
+      skillCatTools: "Tools & Systeme",
       skillDescTools: "Containerisierung, Versionskontrolle & Administration.",
       skillCatAi: "Moderne Tools",
       skillTitleAi: "KI-gestützte Entwicklung",
@@ -339,32 +400,36 @@ document.addEventListener("DOMContentLoaded", () => {
       skillCatUi: "UI / Design",
       skillDescUi: "Figma & Responsive Design.",
 
-
       accordionBtn: "Details anzeigen",
       accordionBtnClose: "Details ausblenden",
 
       resumeTitle: "Berufliche Kompetenzen",
       careerTitle: "Beruflicher Werdegang",
-      job1Data: "07/2025 — Gegenwart",
+
+      jobPracticeDate: "08/2026 — 11/2026",
+      jobPracticeTitle: "Webentwicklerin (Praktikum)",
+      jobPracticePlace: "New Life New Beginning",
+
+      job1Data: "07/2025 — 05/2026",
       job1: "Webentwicklung & KI-Integration",
       job1Place: "IT Career Hub, Berlin",
       job1Task1: "Intensivtraining: HTML5, CSS3, JavaScript (ES6+), React, Node.js.",
       job1Task2: "Webdienste mit Integration von KI-Lösungen (OpenAI API).",
       job1Task3: "Projektentwicklung nach modernen deutschen IT-Marktstandards.",
 
-      job2: "Sprachstudium & Integration в Deutschland",
+      job2: "Sprachstudium & Integration in Deutschland",
       job2Place: "KEB / CEB Akademien, Dillingen/Merzig",
       job2Task1: "Konsequentes Deutschlernen in zertifizierten Akademien.",
       job2Task2: "Ausbau beruflicher Kommunikation und Dokumentation für IT.",
 
-      job3: "Senior Dozent, IT-Abteilung",
+      job3: "Senior-Dozentin, IT-Abteilung",
       job3Place: "Azov Maritime Institute, Mariupol, Ukraine",
       job3Task1: "Entwicklung von Lehrplänen und Lehrmaterialien für IT-Fächer.",
       job3Task2: "Vorlesungen und Übungen (MS Office, Google Workspace, MathCAD).",
       job3Task3: "Autorin wissenschaftlicher Artikel in Fachzeitschriften.",
       job3Task4: "Optimierung des Lehrprozesses durch Cloud-Tools.",
 
-      job4: "Senior Dozent, Biomedizintechnik",
+      job4: "Senior-Dozentin, Biomedizintechnik",
       job4Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
       job4Task1: "Vorlesungen über digitale Technologien und Telemedizin (Python, MATLAB).",
       job4Task2: "Betreuung von Abschlussprojekten und akademisches Mentoring.",
@@ -376,33 +441,41 @@ document.addEventListener("DOMContentLoaded", () => {
       job5Task1: "Selbststudium der IT-Grundlagen (HTML, CSS, Programmierung).",
       job5Task2: "Entwicklung von Lehrmaterialien für die Hochschulbildung.",
 
-      job6: "Senior Dozent / Laborassistent",
+      job6: "Senior-Dozentin / Laborassistentin",
       job6Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
-      job6Task1: "Arbeit mit ausländischen Studenten: Vorlesungen und Praktika (Python, SQL).",
+      job6Task1: "Arbeit mit ausländischen Studierenden: Vorlesungen und Praktika (Python, SQL).",
       job6Task2: "Erstellung von Lehrmaterialien für Informationstechnologien.",
       job6Task3: "Beförderung von der Laborassistentin zur IT-Dozentin.",
 
       educationTitle: "Bildung",
       edu1: "Postgraduales Studium",
       edu1Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
-      edu2: "Spezialist für Informatik & Angewandte Mathematik",
+      edu2: "Spezialistin für Informatik & Angewandte Mathematik",
       edu2Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
       edu3: "Bachelor in Angewandter Mathematik",
       edu3Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
+
       langTitle: "Sprachen",
-      volTitle: "Ehrenamtliche Tätigkeit",
       extraSkillsTitle: "Zusätzlich",
       langBtn: "Sprachkenntnisse",
       lang1: "Deutsch (B2/C1).",
       lang2: "Englisch (B1).",
-      lang3: "Ukr/Rus (Muttersprache)",
-      volBtn: "Soziale Tätigkeit",
-      volText: "Seit 2022 — aktive ehrenamtliche Tätigkeit beim 'Gute Zweck Laden', Schmelz, Deutschland.",
+      lang3: "Ukrainisch / Russisch (Muttersprache).",
+
+      volTitle: "Ehrenamtliches Engagement",
+      jobVolunteerDate: "Seit 11/2026",
+      jobVolunteerTitle: "Berufliches Engagement",
+      jobVolunteerPlace: "New Life New Beginning",
+      jobVolunteerTask1: "Seit November 2026 setze ich meine Zusammenarbeit mit New Life New Beginning ehrenamtlich als Webentwicklerin fort und unterstütze mit meinen beruflichen Fähigkeiten die Weiterentwicklung der Projekte.",
+
+      volSocialDate: "Seit 2022",
+      volBtn: "Soziales Engagement",
+      volText: "Seit 2022 — aktive ehrenamtliche Unterstützung bei der Organisation und Arbeit des Gute Zweck Laden in Schmelz, Deutschland.",
 
       modalDescTitle: "Projektbeschreibung:",
       modalFeaturesTitle: "Wichtigste Projektmerkmale:",
-      projectsTitle: "Projekte",
       btnDetails: "Details →",
+
       projects: [
         {
           title: "My Pet Shop",
@@ -417,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           title: "Events Platform",
-          desc: "Mehrseitige Plattform für die Event-Suche. Implementierung eines dynamischen Filtersystems и Gestaltung einer intuitiven User Journey.",
+          desc: "Mehrseitige Plattform für die Event-Suche. Implementierung eines dynamischen Filtersystems und Gestaltung einer intuitiven User Journey.",
           highlights: [
             "<strong>Filterung:</strong> Logik zur Event-Auswahl nach 4 Kriterien.",
             "<strong>Architektur:</strong> Strenge BEM-Methodik für UI-Komponenten.",
@@ -433,6 +506,28 @@ document.addEventListener("DOMContentLoaded", () => {
             "<strong>Layout:</strong> Komplexes adaptives Raster (Grid/Flex).",
             "<strong>UI:</strong> Interaktive FAQ-Akkordeons und CSS-Animationen."
           ]
+        },
+        {
+          title: "ICHGram",
+          desc: "Ein Full-Stack-soziales Netzwerk zum Teilen von Fotos und zur Kommunikation. Nutzer können Konten erstellen, Fotos veröffentlichen, mit Beiträgen interagieren, anderen Nutzern folgen und in Echtzeit Nachrichten austauschen.",
+          highlights: [
+            "<strong>Authentifizierung:</strong> Registrierung, Anmeldung und JWT-basierte Authentifizierung mit Passwort-Hashing durch bcrypt implementiert.",
+            "<strong>Soziale Funktionen:</strong> Nutzerprofile, Fotobeiträge, Likes, Kommentare, Abonnements und Benachrichtigungen entwickelt.",
+            "<strong>Echtzeitkommunikation:</strong> Socket.IO für Echtzeitnachrichten und Chat-Aktualisierungen integriert.",
+            "<strong>Cloud-Bildspeicherung:</strong> Cloudinary zur Speicherung von Beitragsbildern und Profilavataren integriert.",
+            "<strong>Deployment:</strong> Anwendung auf Render bereitgestellt; MongoDB Atlas dient als Produktionsdatenbank."
+          ]
+        },
+        {
+          title: "My Pet Shop",
+          desc: "Entwicklung einer E-Commerce-Lösung für einen Zoofachhandel. Entwurf einer React-Architektur, Gewährleistung nahtloser Navigation und Implementierung komplexer Warenkorb-Logik.",
+          highlights: [
+            "<strong>State Management:</strong> Redux Toolkit zur globalen Statusverwaltung implementiert.",
+            "<strong>API-Integration:</strong> Optimierter Datentransfer über Axios mit Fehlerbehandlung.",
+            "<strong>Routing:</strong> Mehrstufiges Routing-System mit dynamischen Segmenten.",
+            "<strong>Automatisierung:</strong> Automatisierte Validierung von Bestellformularen.",
+            "<strong>Performance:</strong> Refactoring zur Vermeidung unnötiger Renders."
+          ]
         }
       ]
     }
@@ -447,13 +542,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // === 3. ЭФФЕКТ ПЕЧАТИ ===
   function typeEffect() {
     if (!typingEl) return;
+
     const currentPhrase = typingPhrases[currentLang] || typingPhrases.de;
-    typingEl.textContent = isDeleting ? currentPhrase.substring(0, charIndex - 1) : currentPhrase.substring(0, charIndex + 1);
+
+    typingEl.textContent = isDeleting
+      ? currentPhrase.substring(0, charIndex - 1)
+      : currentPhrase.substring(0, charIndex + 1);
+
     charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+
     let delta = isDeleting ? 50 : 150;
 
-    if (!isDeleting && charIndex === currentPhrase.length) { isDeleting = true; delta = 2000; }
-    else if (isDeleting && charIndex === 0) { isDeleting = false; delta = 500; }
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      isDeleting = true;
+      delta = 2000;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      delta = 500;
+    }
 
     clearTimeout(typingTimeout);
     typingTimeout = setTimeout(typeEffect, delta);
@@ -463,15 +569,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function setLanguage(lang) {
     currentLang = lang;
     document.body.setAttribute('data-lang', lang);
+
     const langData = translations[lang];
     if (!langData) return;
 
     // 1. Перевод простых элементов по ID
     for (const key in langData) {
       if (key === 'projects') continue;
-      const el = document.getElementById(key);
-      if (el) {
 
+      const el = document.getElementById(key);
+
+      if (el) {
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.placeholder = langData[key];
         } else {
@@ -479,11 +587,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     }
+
     // === ОБНОВЛЕНИЕ ЭЛЕМЕНТОВ С data-key (для бургер-меню) ===
     document.querySelectorAll("[data-key]").forEach(el => {
       const key = el.getAttribute("data-key");
+
       if (langData[key]) {
         const link = el.querySelector("a");
+
         if (link) {
           link.textContent = langData[key];
         } else {
@@ -492,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 2. ОБНОВЛЕННЫЙ БЛОК ПЕРЕВОДА КАРТОЧЕК ПРОЕКТОВ
+    // 2. ОБНОВЛЕНИЕ ПЕРЕВОДОВ КАРТОЧЕК ПРОЕКТОВ
     const projectCards = document.querySelectorAll(".project-card");
     const projectsTranslations = langData.projects;
 
@@ -500,20 +611,30 @@ document.addEventListener("DOMContentLoaded", () => {
       projectCards.forEach((card, index) => {
         if (!projectsTranslations[index]) return;
 
-        // 1. Переводим заголовок на карточке
-        const titleEl = card.querySelector("h3");
-        if (titleEl) titleEl.textContent = projectsTranslations[index].title;
+        const liveBtn = card.querySelector(".btn-live");
 
-        // 2. Переводим описание (в скрытом блоке)
+        if (liveBtn) {
+          liveBtn.textContent =
+            lang === "ru" ? "Демо" :
+            lang === "en" ? "Live Demo" :
+            "Live-Demo";
+        }
+
+        const titleEl = card.querySelector("h3");
+
+        if (titleEl) {
+          titleEl.textContent = projectsTranslations[index].title;
+        }
+
         const hiddenDesc = card.querySelector(".modal-desc-text");
+
         if (hiddenDesc) {
           hiddenDesc.innerHTML = projectsTranslations[index].desc;
         }
 
-        // 3. Переводим Highlights (Особенности)
         const highlightsData = card.querySelector(".modal-highlights-data");
+
         if (highlightsData && projectsTranslations[index].highlights) {
-          // КЛЮЧЕВОЙ МОМЕНТ: добавляем класс feature-small, чтобы вернулись оранжевые точки
           highlightsData.innerHTML = projectsTranslations[index].highlights
             .map(h => `<li class="feature-small">${h}</li>`)
             .join('');
@@ -521,18 +642,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 3. Синхронизация текста кнопок аккордеона (при смене языка)
+    // 3. Синхронизация текста кнопок аккордеона
     document.querySelectorAll(".lang-accordion-btn").forEach(btn => {
-      // 1. Проверяем, открыт ли аккордеон СЕЙЧАС
       const isActive = btn.classList.contains('active');
-
-      // 2. Берем данные из langData (которые переданы в функцию setLanguage)
       const text = isActive ? langData.accordionBtnClose : langData.accordionBtn;
-
-      // 3. Определяем стрелку: если активен — вверх, если нет — вниз
       const arrow = isActive ? '▲' : '▼';
 
-      // 4. Обновляем кнопку, сохраняя правильную стрелку
       btn.innerHTML = `${text} <span class="icon-arrow">${arrow}</span>`;
     });
 
@@ -543,18 +658,19 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
   }
 
-  // === 5. ЛОГИКА АККОРДЕОНА (ЗАЩИЩЕННАЯ ВЕРСИЯ) ===
+  // === 5. ЛОГИКА АККОРДЕОНА ===
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('.lang-accordion-btn');
     if (!btn) return;
 
-    // Эти две строки убивают конфликты с другими скриптами
     e.preventDefault();
     e.stopImmediatePropagation();
 
     const content = btn.nextElementSibling;
     const isNowActive = btn.classList.toggle('active');
+
     content.classList.toggle('is-visible', isNowActive);
+
     const langData = translations[currentLang] || translations['de'];
     const text = isNowActive ? langData.accordionBtnClose : langData.accordionBtn;
     const arrow = isNowActive ? '▲' : '▼';
@@ -577,7 +693,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const lang = item.getAttribute("data-lang");
 
         const newImgSrc = item.querySelector('img').src;
-        const newText = item.getAttribute("data-lang").toUpperCase();
+        const newText = lang.toUpperCase();
 
         selected.querySelector('.flag-img').src = newImgSrc;
         selected.querySelector('.lang-code').textContent = newText;
