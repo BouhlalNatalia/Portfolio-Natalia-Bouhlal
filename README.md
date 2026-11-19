@@ -1,41 +1,32 @@
-# 🌐 Портфолио Натальи / Natalia Bouhlal Portfolio / Portfolio von Natalia Bouhlal
+# Portfolio von Natalia Bouhlal
 
-## RU 🇷🇺
-Привет! Я Наталья, веб-разработчик с опытом работы с:
+Live: https://natalia-portfolio-six.vercel.app/
 
-💻 **Технологии:** React ⚛️, TypeScript 🟦, Node.js 🟩, AI-инструменты 🤖, Git 🐙, Docker 🐳, Figma 🎨  
+## DE
+Hallo! Ich bin Natalia, Junior Full-Stack-Entwicklerin aus dem Saarland.
 
-Создаю **современные, адаптивные и удобные веб-приложения**, уделяя внимание чистоте кода и UX.
+**Technologien:** React, TypeScript, Node.js, Express, MongoDB, Git, Docker, Figma
 
-### 🚀 Проекты
-- **My Pet Shop 🐾** – E-commerce на React с Redux Toolkit и REST API.  
-- **Events Platform 📅** – Платформа для поиска мероприятий с динамической фильтрацией и Leaflet API.  
-- **HOTSAUCE Conference 🌶️** – Адаптивный лендинг для конференции с интерактивными UI и чистой архитектурой.
+**Projekte**
+- **ICHGram** – Soziales Netzwerk (React, TypeScript, Node.js, MongoDB, Socket.IO)
+- **My Pet Shop** – Online-Shop mit React, Redux Toolkit und REST API
+- **Events Platform** – Veranstaltungssuche mit Filtern und Leaflet-Karte
+- **HOTSAUCE Conference** – Responsive Landingpage für eine Tech-Konferenz
 
----
+Die Seite ist standardmäßig auf Deutsch. Englisch und Russisch werden über `js/lang.js` umgeschaltet.
 
-## EN 🇬🇧
-Hello! I'm Natalia, a web developer experienced in:
+## EN
+Hi! I'm Natalia, a junior full-stack developer from Saarland, Germany. This is my portfolio (German by default, English and Russian via the language switcher in `js/lang.js`).
 
-💻 **Technologies:** React ⚛️, TypeScript 🟦, Node.js 🟩, AI tools 🤖, Git 🐙, Docker 🐳, Figma 🎨  
+## RU
+Привет! Я Наталья, junior full-stack разработчица. Это моё портфолио (по умолчанию на немецком; английский и русский переключаются в `js/lang.js`).
 
-I build **modern, responsive, and user-friendly web applications**, focusing on clean code and UX.
+## Struktur
+- `index.html` – deutscher Standardtext (für Suchmaschinen und Bewerbungsportale)
+- `js/lang.js` – alle Übersetzungen DE / EN / RU
+- `js/script.js` – Slider, Menü, Kontaktformular
+- `img/` – Bilder im WebP-Format
+- `impressum.html`, `datenschutz.html` – rechtliche Pflichtseiten (Entwurf, mit Generator abgleichen)
+- `fonts/` – Schrift Nunito lokal (Dateien siehe `fonts/README.txt`)
 
-### 🚀 Projects
-- **My Pet Shop 🐾** – E-commerce solution using React, Redux Toolkit, REST API.  
-- **Events Platform 📅** – Multi-page events platform with dynamic filtering and Leaflet API.  
-- **HOTSAUCE Conference 🌶️** – Responsive landing page for a tech conference with interactive UI and clean code architecture.
-
----
-
-## DE 🇩🇪
-Hallo! Ich bin Natalia, Webentwicklerin mit Erfahrung in:
-
-💻 **Technologien:** React ⚛️, TypeScript 🟦, Node.js 🟩, KI-Tools 🤖, Git 🐙, Docker 🐳, Figma 🎨  
-
-Ich erstelle **moderne, responsive und benutzerfreundliche Webanwendungen** mit Fokus auf sauberen Code und UX.
-
-### 🚀 Projekte
-- **My Pet Shop 🐾** – E-Commerce-Lösung mit React, Redux Toolkit und REST API.  
-- **Events Platform 📅** – Mehrseitige Event-Plattform mit dynamischer Filterung und Leaflet API.  
-- **HOTSAUCE Conference 🌶️** – Responsives Landingpage-Projekt für eine Tech-Konferenz mit interaktiven UI und sauberer Code-Architektur.
+Keine externen Skripte, Schriften oder Icons: Die Seite lädt alles von der eigenen Domain. Externe Verbindung nur beim Absenden des Kontaktformulars (EmailJS).

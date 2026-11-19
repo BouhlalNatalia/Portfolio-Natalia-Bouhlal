@@ -83,22 +83,50 @@ if (burger && navMenu && navOverlay) {
         navOverlay.classList.remove('active');
     });
 }
+const formMessages = {
+    de: { ok: 'Nachricht wurde gesendet!', error: 'Fehler beim Senden. Bitte versuchen Sie es später erneut.' },
+    en: { ok: 'Message sent!', error: 'Sending failed. Please try again later.' },
+    ru: { ok: 'Сообщение отправлено!', error: 'Ошибка при отправке. Попробуйте позже.' }
+};
+function currentFormLang() {
+    const l = document.body.getAttribute('data-lang');
+    return formMessages[l] ? l : 'de';
+}
+
 // 5. Отправка формы (EmailJS)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        emailjs.send("service_0by2yph", "template_8tzmb1i", {
-            name: document.getElementById('contactName').value,
-            email: document.getElementById('contactEmail').value,
-            subject: document.getElementById('contactSubject').value,
-            message: document.getElementById('contactMessage').value
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        // Direkter Aufruf der EmailJS-REST-API (kein externes Skript nötig)
+        fetch('https://api.emailjs.com/api/v1.0/email/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                service_id: 'service_0by2yph',
+                template_id: 'template_8tzmb1i',
+                user_id: 'vg9rP5yVVjR7Jls_N',
+                template_params: {
+                    name: document.getElementById('contactName').value,
+                    email: document.getElementById('contactEmail').value,
+                    subject: document.getElementById('contactSubject').value,
+                    message: document.getElementById('contactMessage').value
+                }
+            })
         })
-            .then(() => {
-                alert('Сообщение отправлено!');
+            .then((response) => {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                alert(formMessages[currentFormLang()].ok);
                 contactForm.reset();
-            }, (error) => {
-                alert('Ошибка при отправке: ' + JSON.stringify(error));
+            })
+            .catch(() => {
+                alert(formMessages[currentFormLang()].error);
+            })
+            .finally(() => {
+                if (submitBtn) submitBtn.disabled = false;
             });
     });
 }

@@ -11,176 +11,193 @@ document.addEventListener("DOMContentLoaded", () => {
   let isDeleting = false;
   let typingTimeout;
 
+  // ===================== ПЕРЕВОДЫ / TRANSLATIONS =====================
+  // Немецкий (de) — язык по умолчанию. Тот же текст стоит в index.html.
   const translations = {
 
-    ru: {
-      navHome: "Главная",
-      navAbout: "О себе",
-      navResume: "Профессиональные компетенции",
-      navProjects: "Проекты",
-      navContact: "Контакты",
-      heroTitle: "Привет, я Наталья,",
-      btnPortfolio: "Мои работы",
-      btnContact: "Связаться со мной",
-      aboutTitle: "О себе",
-      aboutText: "Люблю превращать идеи в красивые и удобные веб‑страницы с <strong>HTML, CSS, JavaScript и React</strong>.",
-      aboutExtra1: "Когда не пишу код, играю с <strong>AI‑инструментами</strong>, экспериментирую с дизайном и наслаждаюсь путешествиями.",
-      aboutExtra2: "Давай создадим что-то классное вместе!",
-      projectsTitle: "Проекты",
-      contactTitle: "← Свяжитесь со мной →",
-      contactName: "Имя",
-      contactEmail: "Email",
-      contactSubject: "Тема",
-      contactMessage: "Ваше сообщение",
-      contactBtn: "Отправить",
+    de: {
+      navHome: "Start",
+      navAbout: "Über mich",
+      navResume: "Lebenslauf",
+      navProjects: "Projekte",
+      navContact: "Kontakt",
+      heroTitle: "Hallo, ich bin Natalia,",
+      btnPortfolio: "Meine Projekte",
+      btnContact: "Kontakt aufnehmen",
+      aboutTitle: "Über mich",
+      aboutText: "Ich setze Ideen gern in übersichtliche und benutzerfreundliche Webseiten um – mit <strong>HTML, CSS, JavaScript und React</strong>.",
+      aboutExtra1: "Vor meinem Wechsel in die Webentwicklung habe ich über 10 Jahre an der Universität unterrichtet. Privat probiere ich gern <strong>KI-Tools</strong> aus, experimentiere mit Design und reise.",
+      aboutExtra2: "Ich freue mich auf neue Projekte und die Arbeit im Team.",
+      projectsTitle: "Projekte",
+      contactTitle: "← Schreiben Sie mir →",
+      contactName: "Name",
+      contactEmail: "E-Mail",
+      contactSubject: "Betreff",
+      contactMessage: "Ihre Nachricht",
+      contactBtn: "Nachricht senden",
+      contactConsent: 'Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden.',
       footerCopy: "© 2026 Natalia Bouhlal",
-      footerRole: "Frontend Developer • Built with ❤️",
+      footerRole: "Junior Full-Stack-Entwicklerin • Mit ❤️ erstellt",
 
-      skillsTitle: "С чем я работаю",
-      skillCatFrontend: "Frontend-разработка",
-      skillDescFrontend: "Экосистема React и TypeScript.",
-      skillLabelFoundations: "Основы",
-      skillCatBackend: "Backend и логика",
-      skillDescBackend: "Серверная логика, разработка API и производительность.",
-      skillCatDb: "Базы данных",
-      skillDescDb: "SQL и NoSQL.",
-      skillCatTools: "Инструменты и системы",
-      skillDescTools: "Контейнеризация, контроль версий и администрирование.",
-      skillCatAi: "Современные инструменты",
-      skillTitleAi: "AI-разработка",
-      skillDescAi: "Эффективное программирование с Cursor, Copilot и LLM.",
-      skillCatSoft: "Гибкие навыки",
-      skillDescSoft: "Agile-мышление, командная работа, коммуникация.",
-      skillCatUi: "UI / Дизайн",
-      skillDescUi: "Figma и адаптивная верстка.",
+      skillsTitle: "Womit ich arbeite",
+      skillCatFrontend: "Frontend",
+      skillDescFrontend: "Benutzeroberflächen mit React und TypeScript.",
+      skillLabelFoundations: "Grundlagen",
+      skillCatBackend: "Backend",
+      skillDescBackend: "Server-Logik und REST-APIs mit Node.js und Express.",
+      skillCatDb: "Datenbanken",
+      skillDescDb: "SQL und NoSQL: MySQL und MongoDB.",
+      skillCatTools: "Tools",
+      skillDescTools: "Git und GitHub, Docker und Linux-Grundlagen.",
+      skillCatAi: "Moderne Tools",
+      skillTitleAi: "KI-gestützte Entwicklung",
+      skillDescAi: "Programmieren mit ChatGPT, Claude und Gemini.",
+      skillCatSoft: "Soft Skills",
+      skillDescSoft: "Teamarbeit, Kommunikation, Arbeit mit Jira.",
+      skillCatUi: "UI / Design",
+      skillDescUi: "Figma, Canva und responsive Webseiten.",
 
-      accordionBtn: "Подробнее",
-      accordionBtnClose: "Скрыть детали",
+      accordionBtn: "Details anzeigen",
+      accordionBtnClose: "Details ausblenden",
 
-      resumeTitle: "Профессиональные компетенции",
-      careerTitle: "Профессиональный путь",
+      resumeTitle: "Lebenslauf",
+      careerTitle: "Beruflicher Werdegang",
 
-      jobPracticeDate: "08/2026 — 11/2026",
-      jobPracticeTitle: "Веб-разработчик (практика)",
-      jobPracticePlace: "New Life New Beginning",
+      jobPracticeTitle: "Webentwicklerin (Praktikum)",
+      jobPracticePlace: "New Life – New Beginning e.V., Rüsselsheim (remote)",
+      jobPracticeTask1: "Neugestaltung der Vereinswebsite im Team: bestehende WordPress-Seite analysiert und überarbeitet.",
+      jobPracticeTask2: "Blöcke im Payload CMS entwickelt.",
+      jobPracticeTask3: "Templates mit HTML, CSS und JavaScript umgesetzt (z. B. Animationen).",
+      jobPracticeTask4: "Zusammenarbeit mit Designern (Figma) und dem Teamlead; Aufgaben in Jira.",
+      jobPracticeTask5: "Website beim Einpflegen von Inhalten getestet und Feedback an das Team gegeben.",
+      jobPracticeTask6: "Mitarbeit an einer neuen Plattform (in Entwicklung): Seitenstruktur und Button-Logik entworfen. Mehrere meiner Komponenten-Ideen hat das Team übernommen.",
 
-      job1Data: "07/2025 — 05/2026",
-      job1: "Разработка веб-приложений и интеграция AI-решений",
-      job1Place: "IT Career Hub, Берлин",
-      job1Task1: "Интенсивное обучение: HTML5, CSS3, JavaScript (ES6+), React, Node.js.",
-      job1Task2: "Создание веб-сервисов с интеграцией нейросетей (API OpenAI/другие).",
-      job1Task3: "Разработка проектов по современным стандартам IT-рынка Германии.",
+      job1: "Weiterbildung Webentwicklung mit KI",
+      job1Place: "IT Career Hub GmbH, Berlin",
+      job1Task1: "1.520 Unterrichtseinheiten, AZAV-zertifiziert. Zertifikat vom 22.05.2026.",
+      job1Task2: "Inhalte: HTML, CSS, JavaScript, React, Node.js, TypeScript, Docker und Cloud-Technologien.",
+      job1Task3: "Projekte: ICHGram, My Pet Shop, Events Platform und HOTSAUCE Conference. Fachmodule mit „sehr gut“ bestanden.",
 
-      job2: "Изучение языка и интеграция в Германии",
-      job2Place: "Академии KEB / CEB, Диллинген/Мерциг",
-      job2Task1: "Последовательное изучение немецкого языка в сертифицированных академиях (KEB, CEB, gaertner hkk).",
-      job2Task2: "Развитие профессиональной коммуникации и навыков ведения документации для работы в IT.",
+      jobBew: "Bewerbungsphase",
 
-      job3: "Старший преподаватель кафедры ИТ",
-      job3Place: "Азовский морской институт ОНМА, Мариуполь, Украина",
-      job3Task1: "Разработка учебных программ и методических материалов по ИТ.",
-      job3Task2: "Проведение лекций и практик (MS Office, Google Workspace, MathCAD).",
-      job3Task3: "Автор научных статей и публикаций в профильных изданиях.",
-      job3Task4: "Оптимизация учебного процесса через внедрение облачных инструментов.",
+      job2: "Deutschkurse und Integration",
+      job2Place: "KEB Dillingen, CEB Akademie Merzig, gaertner hkk Dillingen",
+      job2Task1: "Integrationskurs und Deutschkurse bis Niveau B2.",
+      job2Task2: "Berufliche Orientierung für den IT-Arbeitsmarkt.",
 
-      job4: "Старший преподаватель кафедры биомедицинской инженерии",
-      job4Place: "Приазовский государственный технический университет, Мариуполь",
-      job4Task1: "Лекции по цифровым технологиям, телемедицине и сетям (Python, MATLAB, МИС).",
-      job4Task2: "Курирование дипломных проектов и академическое наставничество.",
-      job4Task3: "Участие в аккредитации программ: подготовка документации и отчетов.",
-      job4Task4: "Член жюри МАН, экспертная оценка работ (Медицина, Биология, Экология).",
-      job4Task5: "Внедрение инструментов облачной коллаборации для организации совместной проектной деятельности, оперативной обратной связи и автоматизации контроля знаний.",
+      job3: "Dozentin (Senior Lecturer), Abteilung für Ingenieurwesen und Technologie",
+      job3Place: "Asowsches Maritimes Institut der Nationalen Universität „Odessa Maritime Academy“, Mariupol (Ukraine)",
+      job3Task1: "Lehre im Fach Informationstechnologie (Access, Excel, Google Workspace, MathCAD).",
+      job3Task2: "Erstellung von Studien- und Lehrplänen und von Lehrmaterial.",
+      job3Task3: "Prüferin bei Examen. Autorin von Fachartikeln.",
+      job3Task4: "Einsatz von Google Workspace und MS Office in der Lehre für die gemeinsame Arbeit der Studierenden.",
 
-      job5: "Семейный период и самообразование в ИТ",
-      job5Task1: "Самостоятельное изучение основ IT (HTML, CSS, основы программирования).",
-      job5Task2: "Разработка учебных материалов для сферы высшего образования.",
+      job4: "Dozentin (Senior Lecturer), Lehrstuhl für Biomedizinische Technik",
+      job4Place: "Pryazovskyi State Technical University (Staatliche Technische Universität Asow-Gebiet), Mariupol (Ukraine)",
+      job4Task1: "Lehre: Telemedizinische Systeme, diagnostische und therapeutische Gerätetechnik, Mikroprozessortechnik, Netzwerktechnik, Python, MATLAB.",
+      job4Task2: "Betreuung von Abschlussarbeiten und Mentoring von Studierenden.",
+      job4Task3: "Eigenverantwortliche Vorbereitung der Unterlagen für die Akkreditierung und Zertifizierung von Studiengängen.",
+      job4Task4: "Jurymitglied der Kleinen Akademie der Wissenschaften (Medizin, Biologie, Ökologie).",
+      job4Task5: "Einführung von Cloud-Tools für Projektarbeit, schnelles Feedback und Wissenskontrolle.",
+      job4Task6: "Stellvertretende Dekanin für Studierendenangelegenheiten, Fakultät für Informationstechnologien.",
 
-      job6: "Старший преподаватель / Лаборант",
-      job6Place: "Приазовский государственный технический университет, Мариуполь",
-      job6Task1: "Работа с иностранными студентами: лекции и практики (Python, SQL, LAN, TCP/IP).",
-      job6Task2: "Подготовка учебных материалов по информационным технологиям.",
-      job6Task3: "Продвижение с позиции лаборанта до преподавателя информатики.",
+      job5: "Familienphase und IT-Selbststudium",
+      job5Task1: "Selbststudium der IT-Grundlagen (HTML, CSS, Programmieren).",
+      job5Task2: "Erstellung von Lehrmaterial für die Arbeit an der Hochschule.",
 
-      educationTitle: "Образование",
-      edu1: "Аспирантура",
-      edu1Place: "Приазовский государственный технический университет, Мариуполь",
-      edu2: "Специалист по информатике и прикладной математике",
-      edu2Place: "Приазовский государственный технический университет, Мариуполь",
-      edu3: "Бакалавр по прикладной математике",
-      edu3Place: "Приазовский государственный технический университет, Мариуполь",
+      job6: "Oberlaborantin, später Dozentin für Informatik",
+      job6Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
+      job6Task1: "Praktika und Vorlesungen für internationale Studierende (Python, Access, SQL, Excel, LAN, TCP/IP).",
+      job6Task2: "Erstellung von Lehrmaterial für Informatik.",
+      job6Task3: "Aufstieg von der Laborantin zur Dozentin für Informatik.",
 
-      langTitle: "Языки",
-      extraSkillsTitle: "Дополнительно",
-      langBtn: "Владение языками",
-      lang1: "Немецкий (B2/C1).",
-      lang2: "Английский (B1).",
-      lang3: "Украинский / Русский (родные).",
+      educationTitle: "Ausbildung",
+      edu1: "Doktorandenstudium (Aspirantur), nicht abgeschlossen",
+      edu1Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
+      edu2: "Spezialistin für Informatik und angewandte Mathematik",
+      edu2Place: "Pryazovskyi State Technical University, Mariupol (Ukraine) · Diplom mit Auszeichnung; laut ZAB-Bewertung auf Master-Niveau",
+      edu3: "Bachelor in angewandter Mathematik",
+      edu3Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
 
-      volTitle: "Волонтёрская деятельность",
-      jobVolunteerDate: "С 11/2026 — по настоящее время",
-      jobVolunteerTitle: "Профессиональная деятельность",
-      jobVolunteerPlace: "New Life New Beginning",
-      jobVolunteerTask1: "С ноября 2026 года продолжаю сотрудничество с New Life New Beginning на добровольной и безвозмездной основе в качестве веб-разработчика, применяя свои профессиональные навыки и участвуя в дальнейшем развитии проектов.",
+      langTitle: "Sprachen",
+      extraSkillsTitle: "Weitere Angaben",
+      langBtn: "Sprachkenntnisse",
+      lang1: "Deutsch: B2 (telc Deutsch-Test für den Beruf, 06/2024)",
+      lang2: "Englisch: B1",
+      lang3: "Ukrainisch und Russisch: Muttersprache",
 
-      volSocialDate: "С 2022 года",
-      volBtn: "Социальная деятельность",
-      volText: "С 2022 года — активная помощь в организации работы «Gute Zweck Laden», Шмельц, Германия.",
+      jobVolunteerDate: "Seit 11/2026",
+      jobVolunteerTitle: "Webentwicklerin (ehrenamtlich)",
+      jobVolunteerPlace: "New Life – New Beginning e.V.",
+      jobVolunteerTask1: "Nach dem Praktikum arbeite ich ehrenamtlich an den Webprojekten des Vereins weiter.",
 
-      modalDescTitle: "Описание проекта:",
-      modalFeaturesTitle: "Ключевые особенности проекта:",
-      btnDetails: "Подробнее →",
+      volSocialDate: "Seit 06/2022",
+      volBtn: "Soziales Engagement",
+      volText: "Ich helfe ehrenamtlich im „Gute Zweck Laden“ in Schmelz (Kommunikation und Organisation).",
+
+      modalDescTitle: "Projektbeschreibung:",
+      modalFeaturesTitle: "Wichtigste Merkmale:",
+
+      metaTitle: "Natalia Bouhlal | Webentwicklerin",
+      metaDescription: "Portfolio von Natalia Bouhlal, Junior Full-Stack-Entwicklerin aus Eppelborn (Saarland). Projekte mit React, TypeScript, Node.js und MongoDB, Lebenslauf und Kontakt.",
+      ariaPrev: "Vorheriges Projekt",
+      ariaNext: "Nächstes Projekt",
+      liveLabel: "Live-Demo",
 
       projects: [
         {
-          title: "My Pet Shop",
-          desc: "Разработала и подготовила к релизу полноценное E-commerce решение для зоомагазина. В ходе работы спроектировала компонентную архитектуру на React, обеспечила бесшовную навигацию и реализовала сложную логику управления товарными запасами в корзине.",
+          title: "ICHGram",
+          desc: "Soziales Netzwerk zum Teilen von Fotos, entwickelt als Full-Stack-Anwendung mit React, TypeScript und Node.js. Nutzer legen ein Profil an, posten Fotos, liken, kommentieren, folgen anderen und chatten in Echtzeit.",
           highlights: [
-            "<strong>State Management:</strong> Внедрена технология Redux Toolkit для управления состоянием.",
-            "<strong>API Integration:</strong> Оптимизирован процесс получения данных через Axios.",
-            "<strong>Routing:</strong> Реализована многоуровневая система маршрутизации.",
-            "<strong>Automation:</strong> Автоматизирован процесс валидации форм заказа.",
-            "<strong>Performance:</strong> Проведен рефакторинг для ускорения работы приложения."
+            "<strong>Anmeldung:</strong> Registrierung, Login und JWT-Authentifizierung. Passwörter werden mit bcrypt gehasht.",
+            "<strong>Soziale Funktionen:</strong> Profile, Foto-Beiträge, Likes, Kommentare, Follower und Benachrichtigungen.",
+            "<strong>Echtzeit-Chat:</strong> Nachrichten und Chat-Updates in Echtzeit mit Socket.IO.",
+            "<strong>Bilderspeicher:</strong> Beitragsfotos und Profilbilder liegen in Cloudinary.",
+            "<strong>Deployment:</strong> Die App läuft auf Render, die Daten liegen in MongoDB Atlas."
+          ]
+        },
+        {
+          title: "My Pet Shop",
+          desc: "Online-Shop für ein Zoofachgeschäft, gebaut mit React. Mit Produktkatalog, Warenkorb, Favoriten und Filtern.",
+          highlights: [
+            "<strong>State Management:</strong> Globaler Zustand mit Redux Toolkit (Warenkorb, Favoriten, Filter).",
+            "<strong>API-Anbindung:</strong> Datenabruf mit Axios, Interceptors und Fehlerbehandlung.",
+            "<strong>Routing:</strong> Mehrere Seiten mit React Router, auch dynamische Produktseiten.",
+            "<strong>Formulare:</strong> Prüfung der Bestelldaten mit Formik und Yup.",
+            "<strong>Performance und UX:</strong> Weniger unnötige Renders. Die Oberfläche passt sich allen Bildschirmgrößen an."
           ]
         },
         {
           title: "Events Platform",
-          desc: "Многостраничная платформа для поиска мероприятий. Реализована сложная система фильтрации и интуитивный пользовательский путь.",
+          desc: "Mehrseitige Webseite zum Suchen und Buchen von Veranstaltungen, mit interaktiver Karte und Filtern.",
           highlights: [
-            "<strong>Фильтрация:</strong> Логика отбора по 4 критериям.",
-            "<strong>Архитектура:</strong> Использование методологии БЭМ.",
-            "<strong>Карта:</strong> Интеграция Leaflet API для локаций.",
-            "<strong>SEO:</strong> Оптимизированная семантическая верстка."
+            "<strong>Filter:</strong> Veranstaltungen nach vier Kriterien: Typ, Format (Entfernung), Kategorie und Datum.",
+            "<strong>BEM:</strong> Klare Benennung der CSS-Klassen für wiederverwendbare Komponenten.",
+            "<strong>Build:</strong> SCSS und Gulp für eine schnelle, saubere Entwicklung.",
+            "<strong>Karte:</strong> Orte der Veranstaltungen auf einer Leaflet-Karte.",
+            "<strong>SEO:</strong> Semantisches HTML5 und responsive Layouts für Smartphone und Desktop."
           ]
         },
         {
           title: "HOTSAUCE Conference",
-          desc: "Профессиональный лендинг для тех-конференции с акцентом на чистую архитектуру и сложную геометрию верстки.",
+          desc: "Responsive Landingpage für eine Tech-Konferenz mit Bereichen für Sprecher, Programm, Preise und FAQ.",
           highlights: [
-            "<strong>БЭМ:</strong> Строгая модульная структура кода.",
-            "<strong>Layout:</strong> Сложная адаптивная сетка (Grid/Flex).",
-            "<strong>UI:</strong> Креативные эффекты и интерактивные элементы."
+            "<strong>BEM:</strong> Modularer CSS-Code mit unabhängigen Komponenten.",
+            "<strong>Layout:</strong> Raster für Sprecher und Programm mit CSS Grid und Flexbox.",
+            "<strong>Gestaltung:</strong> Ticket-Effekt mit Pseudo-Elementen (::before, ::after) und SVG.",
+            "<strong>Interaktion:</strong> FAQ-Akkordeon und Hinweise mit JavaScript und CSS-Animationen.",
+            "<strong>Responsive:</strong> Getestet für fünf Bildschirmgrößen (390 bis 1920 px). Gulp, SCSS und semantisches HTML5."
           ]
         },
         {
           title: "ICHGram",
-          desc: "Полнофункциональная социальная сеть для обмена фотографиями и общения. Пользователи могут создавать аккаунты, публиковать фотографии, взаимодействовать с публикациями, подписываться на других пользователей и общаться в режиме реального времени.",
+          desc: "Soziales Netzwerk zum Teilen von Fotos, entwickelt als Full-Stack-Anwendung mit React, TypeScript und Node.js. Nutzer legen ein Profil an, posten Fotos, liken, kommentieren, folgen anderen und chatten in Echtzeit.",
           highlights: [
-            "<strong>Аутентификация:</strong> Реализованы регистрация, вход в систему и JWT-аутентификация с хешированием паролей с помощью bcrypt.",
-            "<strong>Социальные функции:</strong> Разработаны профили пользователей, публикация фотографий, лайки, комментарии, подписки и уведомления.",
-            "<strong>Общение в реальном времени:</strong> Интегрирован Socket.IO для обмена сообщениями и обновления чатов в режиме реального времени.",
-            "<strong>Облачное хранение изображений:</strong> Интегрирован Cloudinary для хранения фотографий публикаций и аватаров пользователей.",
-            "<strong>Развёртывание:</strong> Приложение размещено на Render, а для хранения данных используется MongoDB Atlas."
-          ]
-        },
-        {
-          title: "My Pet Shop",
-          desc: "Разработала и подготовила к релизу полноценное E-commerce решение для зоомагазина. В ходе работы спроектировала компонентную архитектуру на React, обеспечила бесшовную навигацию и реализовала сложную логику управления товарными запасами в корзине.",
-          highlights: [
-            "<strong>State Management:</strong> Внедрена технология Redux Toolkit для управления состоянием.",
-            "<strong>API Integration:</strong> Оптимизирован процесс получения данных через Axios.",
-            "<strong>Routing:</strong> Реализована многоуровневая система маршрутизации.",
-            "<strong>Automation:</strong> Автоматизирован процесс валидации форм заказа.",
-            "<strong>Performance:</strong> Проведен рефакторинг для ускорения работы приложения."
+            "<strong>Anmeldung:</strong> Registrierung, Login und JWT-Authentifizierung. Passwörter werden mit bcrypt gehasht.",
+            "<strong>Soziale Funktionen:</strong> Profile, Foto-Beiträge, Likes, Kommentare, Follower und Benachrichtigungen.",
+            "<strong>Echtzeit-Chat:</strong> Nachrichten und Chat-Updates in Echtzeit mit Socket.IO.",
+            "<strong>Bilderspeicher:</strong> Beitragsfotos und Profilbilder liegen in Cloudinary.",
+            "<strong>Deployment:</strong> Die App läuft auf Render, die Daten liegen in MongoDB Atlas."
           ]
         }
       ]
@@ -189,344 +206,374 @@ document.addEventListener("DOMContentLoaded", () => {
     en: {
       navHome: "Home",
       navAbout: "About",
-      navResume: "Professional Skills",
+      navResume: "CV",
       navProjects: "Projects",
       navContact: "Contact",
       heroTitle: "Hi, I'm Natalia,",
-      btnPortfolio: "My Work",
-      btnContact: "Contact Me",
-      aboutTitle: "About Me",
-      aboutText: "I love turning ideas into beautiful and user-friendly web pages with <strong>HTML, CSS, JavaScript, and React</strong>.",
-      aboutExtra1: "When I'm not coding, I play with <strong>AI tools</strong>, experiment with design, and enjoy traveling.",
-      aboutExtra2: "Let's create something awesome together!",
+      btnPortfolio: "My projects",
+      btnContact: "Get in touch",
+      aboutTitle: "About me",
+      aboutText: "I enjoy turning ideas into clear, user-friendly websites with <strong>HTML, CSS, JavaScript and React</strong>.",
+      aboutExtra1: "Before moving into web development, I taught at a university for over 10 years. In my free time I try out <strong>AI tools</strong>, experiment with design and travel.",
+      aboutExtra2: "I look forward to new projects and working in a team.",
       projectsTitle: "Projects",
-      contactTitle: "← Contact Me →",
+      contactTitle: "← Get in touch →",
       contactName: "Name",
       contactEmail: "Email",
       contactSubject: "Subject",
       contactMessage: "Your message",
-      contactBtn: "Send",
+      contactBtn: "Send message",
+      contactConsent: 'I have read the <a href="datenschutz.html" target="_blank" rel="noopener">privacy policy</a> (in German) and agree that my details are used to process my request.',
       footerCopy: "© 2026 Natalia Bouhlal",
-      footerRole: "Frontend Developer • Built with ❤️",
+      footerRole: "Junior Full-Stack Developer • Built with ❤️",
 
       skillsTitle: "What I work with",
-      skillCatFrontend: "Frontend Development",
-      skillDescFrontend: "React Ecosystem & TypeScript.",
+      skillCatFrontend: "Frontend",
+      skillDescFrontend: "User interfaces with React and TypeScript.",
       skillLabelFoundations: "Foundations",
-      skillCatBackend: "Backend & Logic",
-      skillDescBackend: "Server logic, API development & performance.",
+      skillCatBackend: "Backend",
+      skillDescBackend: "Server logic and REST APIs with Node.js and Express.",
       skillCatDb: "Databases",
-      skillDescDb: "SQL & NoSQL.",
-      skillCatTools: "Tools & System",
-      skillDescTools: "Containerization, Version Control & Administration.",
-      skillCatAi: "Modern Tools",
-      skillTitleAi: "AI-Driven Development",
-      skillDescAi: "Efficient coding with Cursor, Copilot & LLMs.",
-      skillCatSoft: "Soft Skills",
-      skillDescSoft: "Agile mindset, Teamwork, Communication.",
+      skillDescDb: "SQL and NoSQL: MySQL and MongoDB.",
+      skillCatTools: "Tools",
+      skillDescTools: "Git and GitHub, Docker and Linux basics.",
+      skillCatAi: "Modern tools",
+      skillTitleAi: "AI-assisted development",
+      skillDescAi: "Coding with ChatGPT, Claude and Gemini.",
+      skillCatSoft: "Soft skills",
+      skillDescSoft: "Teamwork, communication, working with Jira.",
       skillCatUi: "UI / Design",
-      skillDescUi: "Figma & Responsive Design.",
+      skillDescUi: "Figma, Canva and responsive websites.",
 
-      accordionBtn: "More details",
+      accordionBtn: "Show details",
       accordionBtnClose: "Hide details",
 
-      resumeTitle: "Professional Competencies",
-      careerTitle: "Career Path",
+      resumeTitle: "CV",
+      careerTitle: "Career",
 
-      jobPracticeDate: "08/2026 — 11/2026",
-      jobPracticeTitle: "Web Developer (Internship)",
-      jobPracticePlace: "New Life New Beginning",
+      jobPracticeTitle: "Web Developer (internship)",
+      jobPracticePlace: "New Life – New Beginning e.V., Rüsselsheim (remote)",
+      jobPracticeTask1: "Redesign of the association's website as part of a team: analysed and reworked the existing WordPress site.",
+      jobPracticeTask2: "Developed blocks in Payload CMS.",
+      jobPracticeTask3: "Built templates with HTML, CSS and JavaScript (e.g. animations).",
+      jobPracticeTask4: "Worked with designers (Figma) and the team lead; tasks in Jira.",
+      jobPracticeTask5: "Tested the website while entering content and gave feedback to the team.",
+      jobPracticeTask6: "Contributed to a new platform (in development): designed page structure and button logic. The team adopted several of my component ideas.",
 
-      job1Data: "07/2025 — 05/2026",
-      job1: "Web Development & AI Integration",
-      job1Place: "IT Career Hub, Berlin",
-      job1Task1: "Intensive training: HTML5, CSS3, JavaScript (ES6+), React, Node.js.",
-      job1Task2: "Developing web services with neural network integration (OpenAI API).",
-      job1Task3: "Developing projects according to modern German IT market standards.",
+      job1: "Web Development with AI (professional training)",
+      job1Place: "IT Career Hub GmbH, Berlin",
+      job1Task1: "1,520 teaching units, AZAV-certified. Certificate dated 22.05.2026.",
+      job1Task2: "Topics: HTML, CSS, JavaScript, React, Node.js, TypeScript, Docker and cloud technologies.",
+      job1Task3: "Projects: ICHGram, My Pet Shop, Events Platform and HOTSAUCE Conference. Core modules passed with “sehr gut” (very good).",
 
-      job2: "Language Study & Integration in Germany",
-      job2Place: "KEB / CEB Academies, Dillingen/Merzig",
-      job2Task1: "Consistent German language study at certified academies.",
-      job2Task2: "Developing professional communication and documentation skills for IT.",
+      jobBew: "Job search",
 
-      job3: "Senior Lecturer, IT Department",
-      job3Place: "Azov Maritime Institute, Mariupol, Ukraine",
-      job3Task1: "Development of curricula and teaching materials for IT disciplines.",
-      job3Task2: "Lecturing and practical classes (MS Office, Google Workspace, MathCAD).",
-      job3Task3: "Author of scientific articles and publications in professional journals.",
-      job3Task4: "Optimizing the educational process through cloud tools integration.",
+      job2: "German courses and integration",
+      job2Place: "KEB Dillingen, CEB Akademie Merzig, gaertner hkk Dillingen",
+      job2Task1: "Integration course and German courses up to level B2.",
+      job2Task2: "Career orientation for the IT job market.",
 
-      job4: "Senior Lecturer, Biomedical Engineering Dept.",
-      job4Place: "Pryazovskyi State Technical University, Mariupol",
-      job4Task1: "Lectures on digital technologies, telemedicine, and networks (Python, MATLAB).",
-      job4Task2: "Supervision of graduation projects and academic mentoring.",
-      job4Task3: "Participation in program accreditation: documentation and reports.",
-      job4Task4: "Member of the Junior Academy of Sciences jury (Medicine, Biology, Ecology).",
-      job4Task5: "Implementation of cloud collaboration tools for organizing joint project activities, real-time feedback, and automation of knowledge assessment.",
+      job3: "Lecturer (Senior Lecturer), Department of Engineering and Technology",
+      job3Place: "Azov Maritime Institute of the National University “Odesa Maritime Academy”, Mariupol (Ukraine)",
+      job3Task1: "Taught information technology (Access, Excel, Google Workspace, MathCAD).",
+      job3Task2: "Created curricula, study plans and teaching materials.",
+      job3Task3: "Examiner. Author of articles in professional journals.",
+      job3Task4: "Introduced Google Workspace and MS Office into teaching to support students' collaboration.",
 
-      job5: "Family Period & IT Self-education",
-      job5Task1: "Self-study of IT basics (HTML, CSS, programming fundamentals).",
-      job5Task2: "Development of educational materials for higher education.",
+      job4: "Lecturer (Senior Lecturer), Department of Biomedical Engineering",
+      job4Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
+      job4Task1: "Taught telemedicine systems, diagnostic and therapeutic equipment, microprocessor technology, network technology, Python and MATLAB.",
+      job4Task2: "Supervised final theses and mentored students.",
+      job4Task3: "Prepared, on my own responsibility, the documents for accreditation and certification of study programmes.",
+      job4Task4: "Jury member of the Junior Academy of Sciences (medicine, biology, ecology).",
+      job4Task5: "Introduced cloud tools for project work, quick feedback and knowledge assessment.",
+      job4Task6: "Deputy Dean for Student Affairs, Faculty of Information Technologies.",
 
-      job6: "Senior Lecturer / Lab Assistant",
-      job6Place: "Pryazovskyi State Technical University, Mariupol",
-      job6Task1: "Work with international students: lectures and practices (Python, SQL, LAN).",
-      job6Task2: "Preparation of teaching materials for information technologies.",
-      job6Task3: "Promoted from lab assistant to IT lecturer.",
+      job5: "Family period and IT self-study",
+      job5Task1: "Self-study of IT basics (HTML, CSS, programming).",
+      job5Task2: "Created teaching materials for university work.",
+
+      job6: "Senior lab assistant, later lecturer in computer science",
+      job6Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
+      job6Task1: "Practical classes and lectures for international students (Python, Access, SQL, Excel, LAN, TCP/IP).",
+      job6Task2: "Created teaching materials for computer science.",
+      job6Task3: "Moved from lab assistant to lecturer in computer science.",
 
       educationTitle: "Education",
-      edu1: "Postgraduate Studies",
-      edu1Place: "Pryazovskyi State Technical University, Mariupol",
-      edu2: "Specialist in Computer Science & Applied Math",
-      edu2Place: "Pryazovskyi State Technical University, Mariupol",
+      edu1: "Doctoral studies (postgraduate), not completed",
+      edu1Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
+      edu2: "Specialist in Computer Science and Applied Mathematics",
+      edu2Place: "Pryazovskyi State Technical University, Mariupol (Ukraine) · Diploma with distinction; rated Master's level by ZAB",
       edu3: "Bachelor in Applied Mathematics",
-      edu3Place: "Pryazovskyi State Technical University, Mariupol",
+      edu3Place: "Pryazovskyi State Technical University, Mariupol (Ukraine)",
 
       langTitle: "Languages",
       extraSkillsTitle: "Additional",
-      langBtn: "Language Proficiency",
-      lang1: "German (B2/C1).",
-      lang2: "English (B1).",
-      lang3: "Ukrainian / Russian (Native).",
+      langBtn: "Language skills",
+      lang1: "German: B2 (telc Deutsch-Test für den Beruf, 06/2024)",
+      lang2: "English: B1",
+      lang3: "Ukrainian and Russian: native",
 
-      volTitle: "Volunteering",
       jobVolunteerDate: "Since 11/2026",
-      jobVolunteerTitle: "Professional Activity",
-      jobVolunteerPlace: "New Life New Beginning",
-      jobVolunteerTask1: "Since November 2026, I have continued working with New Life New Beginning on a voluntary, unpaid basis as a web developer, applying my professional skills and contributing to the further development of its projects.",
+      jobVolunteerTitle: "Web Developer (volunteer)",
+      jobVolunteerPlace: "New Life – New Beginning e.V.",
+      jobVolunteerTask1: "After the internship, I keep working on the association's web projects as a volunteer.",
 
-      volSocialDate: "Since 2022",
-      volBtn: "Social Activity",
-      volText: "Since 2022 — actively supporting the work of Gute Zweck Laden in Schmelz, Germany.",
+      volSocialDate: "Since 06/2022",
+      volBtn: "Community work",
+      volText: "I volunteer at the “Gute Zweck Laden” in Schmelz (communication and organisation).",
 
-      modalDescTitle: "Project Description:",
-      modalFeaturesTitle: "Key Project Features:",
-      btnDetails: "Details →",
+      modalDescTitle: "Project description:",
+      modalFeaturesTitle: "Key features:",
+
+      metaTitle: "Natalia Bouhlal | Web Developer",
+      metaDescription: "Portfolio of Natalia Bouhlal, junior full-stack developer from Eppelborn (Saarland, Germany). Projects with React, TypeScript, Node.js and MongoDB, CV and contact.",
+      ariaPrev: "Previous project",
+      ariaNext: "Next project",
+      liveLabel: "Live Demo",
 
       projects: [
         {
-          title: "My Pet Shop",
-          desc: "Developed and prepared for release a full-scale E-commerce solution for a pet store. Designed a component-based architecture using React, ensured seamless navigation, and implemented complex shopping cart inventory management logic.",
+          title: "ICHGram",
+          desc: "A photo-sharing social network built as a full-stack app with React, TypeScript and Node.js. Users create a profile, post photos, like, comment, follow others and chat in real time.",
           highlights: [
-            "<strong>State Management:</strong> Implemented Redux Toolkit for global state management.",
-            "<strong>API Integration:</strong> Optimized data fetching via Axios and automated error handling.",
-            "<strong>Routing:</strong> Multi-level routing system with dynamic segments.",
-            "<strong>Automation:</strong> Automated checkout data collection and validation.",
-            "<strong>Performance:</strong> Component refactoring to prevent unnecessary re-renders."
+            "<strong>Login:</strong> Registration, login and JWT authentication. Passwords are hashed with bcrypt.",
+            "<strong>Social features:</strong> Profiles, photo posts, likes, comments, followers and notifications.",
+            "<strong>Real-time chat:</strong> Messages and chat updates in real time with Socket.IO.",
+            "<strong>Image storage:</strong> Post photos and profile pictures are stored in Cloudinary.",
+            "<strong>Deployment:</strong> The app runs on Render, the data is stored in MongoDB Atlas."
+          ]
+        },
+        {
+          title: "My Pet Shop",
+          desc: "An online shop for a pet store, built with React. It has a product catalogue, a cart, favourites and filters.",
+          highlights: [
+            "<strong>State management:</strong> Global state with Redux Toolkit (cart, favourites, filters).",
+            "<strong>API connection:</strong> Data fetching with Axios, interceptors and error handling.",
+            "<strong>Routing:</strong> Several pages with React Router, including dynamic product pages.",
+            "<strong>Forms:</strong> Validation of order data with Formik and Yup.",
+            "<strong>Performance and UX:</strong> Fewer unnecessary re-renders. The interface adapts to all screen sizes."
           ]
         },
         {
           title: "Events Platform",
-          desc: "Multi-page platform for searching and booking events. Features a complex dynamic filtering system and intuitive user journey.",
+          desc: "A multi-page website for finding and booking events, with an interactive map and filters.",
           highlights: [
-            "<strong>Dynamic Filtering:</strong> Logic for event selection based on 4 criteria.",
-            "<strong>Architecture:</strong> Strict BEM methodology for reusable UI components.",
-            "<strong>Map:</strong> Integrated Leaflet API for event location visualization.",
-            "<strong>SEO:</strong> Optimized semantic HTML5 for better indexing."
+            "<strong>Filters:</strong> Events by four criteria: type, format (distance), category and date.",
+            "<strong>BEM:</strong> Clear CSS class naming for reusable components.",
+            "<strong>Build:</strong> SCSS and Gulp for fast, clean development.",
+            "<strong>Map:</strong> Event locations shown on a Leaflet map.",
+            "<strong>SEO:</strong> Semantic HTML5 and responsive layouts for smartphone and desktop."
           ]
         },
         {
           title: "HOTSAUCE Conference",
-          desc: "Professional responsive landing page for the HOTSAUCE tech conference, focused on clean architecture and complex geometric layout.",
+          desc: "A responsive landing page for a tech conference with sections for speakers, schedule, prices and FAQ.",
           highlights: [
-            "<strong>BEM:</strong> Modular code structure for style independence.",
-            "<strong>Layout:</strong> Complex adaptive grid for speakers and schedules.",
-            "<strong>Interactive UI:</strong> Vanilla JS accordions and smooth CSS animations."
+            "<strong>BEM:</strong> Modular CSS with independent components.",
+            "<strong>Layout:</strong> Speaker and schedule grid with CSS Grid and Flexbox.",
+            "<strong>Design:</strong> Ticket effect with pseudo-elements (::before, ::after) and SVG.",
+            "<strong>Interaction:</strong> FAQ accordion and notices with JavaScript and CSS animations.",
+            "<strong>Responsive:</strong> Tested for five screen sizes (390 to 1920 px). Gulp, SCSS and semantic HTML5."
           ]
         },
         {
           title: "ICHGram",
-          desc: "A full-stack social networking application for photo sharing and communication. Users can create accounts, publish photos, interact with posts, follow other users and communicate through real-time messaging.",
+          desc: "A photo-sharing social network built as a full-stack app with React, TypeScript and Node.js. Users create a profile, post photos, like, comment, follow others and chat in real time.",
           highlights: [
-            "<strong>Authentication:</strong> Implemented user registration, login and JWT-based authentication with bcrypt password hashing.",
-            "<strong>Social Features:</strong> Developed user profiles, photo posts, likes, comments, following and notifications.",
-            "<strong>Real-Time Communication:</strong> Integrated Socket.IO for real-time messaging and chat updates.",
-            "<strong>Cloud Image Storage:</strong> Integrated Cloudinary for storing uploaded post images and profile avatars.",
-            "<strong>Deployment:</strong> Deployed the application on Render with MongoDB Atlas as the production database."
-          ]
-        },
-        {
-          title: "My Pet Shop",
-          desc: "Developed and prepared for release a full-scale E-commerce solution for a pet store. Designed a component-based architecture using React, ensured seamless navigation, and implemented complex shopping cart inventory management logic.",
-          highlights: [
-            "<strong>State Management:</strong> Implemented Redux Toolkit for global state management.",
-            "<strong>API Integration:</strong> Optimized data fetching via Axios and automated error handling.",
-            "<strong>Routing:</strong> Multi-level routing system with dynamic segments.",
-            "<strong>Automation:</strong> Automated checkout data collection and validation.",
-            "<strong>Performance:</strong> Component refactoring to prevent unnecessary re-renders."
+            "<strong>Login:</strong> Registration, login and JWT authentication. Passwords are hashed with bcrypt.",
+            "<strong>Social features:</strong> Profiles, photo posts, likes, comments, followers and notifications.",
+            "<strong>Real-time chat:</strong> Messages and chat updates in real time with Socket.IO.",
+            "<strong>Image storage:</strong> Post photos and profile pictures are stored in Cloudinary.",
+            "<strong>Deployment:</strong> The app runs on Render, the data is stored in MongoDB Atlas."
           ]
         }
       ]
     },
 
-    de: {
-      navHome: "Startseite",
-      navAbout: "Über mich",
-      navResume: "Berufliche Kompetenzen",
-      navProjects: "Projekte",
-      navContact: "Kontakt",
-      heroTitle: "Hallo, ich bin Natalia,",
-      btnPortfolio: "Meine Arbeiten",
-      btnContact: "Kontaktiere mich",
-      aboutTitle: "Über mich",
-      aboutText: "Ich liebe es, Ideen in schöne und benutzerfreundliche Webseiten mit <strong>HTML, CSS, JavaScript und React</strong> umzusetzen.",
-      aboutExtra1: "Wenn ich nicht programmiere, spiele ich mit <strong>KI-Tools</strong>, experimentiere mit Design und genieße das Reisen.",
-      aboutExtra2: "Lass uns gemeinsam etwas Großartiges erschaffen!",
-      projectsTitle: "Projekte",
-      contactTitle: "← Kontaktiere mich →",
-      contactName: "Name",
+    ru: {
+      navHome: "Главная",
+      navAbout: "О себе",
+      navResume: "Резюме",
+      navProjects: "Проекты",
+      navContact: "Контакты",
+      heroTitle: "Привет, я Наталья,",
+      btnPortfolio: "Мои работы",
+      btnContact: "Связаться со мной",
+      aboutTitle: "О себе",
+      aboutText: "Люблю превращать идеи в красивые и удобные веб‑страницы с <strong>HTML, CSS, JavaScript и React</strong>.",
+      aboutExtra1: "Перед переходом в веб-разработку я более 10 лет преподавала в университете. В свободное время пробую <strong>AI‑инструменты</strong>, экспериментирую с дизайном и путешествую.",
+      aboutExtra2: "Буду рада новым проектам и работе в команде.",
+      projectsTitle: "Проекты",
+      contactTitle: "← Свяжитесь со мной →",
+      contactName: "Имя",
       contactEmail: "Email",
-      contactSubject: "Betreff",
-      contactMessage: "Ihre Nachricht",
-      contactBtn: "Senden",
+      contactSubject: "Тема",
+      contactMessage: "Ваше сообщение",
+      contactBtn: "Отправить",
+      contactConsent: 'Я прочитал(а) <a href="datenschutz.html" target="_blank" rel="noopener">политику конфиденциальности</a> (на немецком) и согласен(на) на использование моих данных для ответа на запрос.',
       footerCopy: "© 2026 Natalia Bouhlal",
-      footerRole: "Frontend-Entwicklerin • Mit ❤️ erstellt",
+      footerRole: "Junior Full-Stack Developer • Built with ❤️",
 
-      skillsTitle: "Womit ich arbeite",
-      skillCatFrontend: "Frontend-Entwicklung",
-      skillDescFrontend: "React Ecosystem & TypeScript.",
-      skillLabelFoundations: "Grundlagen",
-      skillCatBackend: "Backend & Logik",
-      skillDescBackend: "Serverlogik, API-Entwicklung & Performance.",
-      skillCatDb: "Datenbanken",
-      skillDescDb: "SQL & NoSQL.",
-      skillCatTools: "Tools & Systeme",
-      skillDescTools: "Containerisierung, Versionskontrolle & Administration.",
-      skillCatAi: "Moderne Tools",
-      skillTitleAi: "KI-gestützte Entwicklung",
-      skillDescAi: "Effizientes Coding mit Cursor, Copilot & LLMs.",
-      skillCatSoft: "Soft Skills",
-      skillDescSoft: "Agile Denkweise, Teamarbeit, Kommunikation.",
-      skillCatUi: "UI / Design",
-      skillDescUi: "Figma & Responsive Design.",
+      skillsTitle: "С чем я работаю",
+      skillCatFrontend: "Frontend",
+      skillDescFrontend: "Интерфейсы на React и TypeScript.",
+      skillLabelFoundations: "Основы",
+      skillCatBackend: "Backend",
+      skillDescBackend: "Серверная логика и REST API на Node.js и Express.",
+      skillCatDb: "Базы данных",
+      skillDescDb: "SQL и NoSQL: MySQL и MongoDB.",
+      skillCatTools: "Инструменты",
+      skillDescTools: "Git и GitHub, Docker, основы Linux.",
+      skillCatAi: "Современные инструменты",
+      skillTitleAi: "AI-разработка",
+      skillDescAi: "Программирование с ChatGPT, Claude и Gemini.",
+      skillCatSoft: "Гибкие навыки",
+      skillDescSoft: "Командная работа, коммуникация, работа в Jira.",
+      skillCatUi: "UI / Дизайн",
+      skillDescUi: "Figma, Canva и адаптивная вёрстка.",
 
-      accordionBtn: "Details anzeigen",
-      accordionBtnClose: "Details ausblenden",
+      accordionBtn: "Подробнее",
+      accordionBtnClose: "Скрыть детали",
 
-      resumeTitle: "Berufliche Kompetenzen",
-      careerTitle: "Beruflicher Werdegang",
+      resumeTitle: "Резюме",
+      careerTitle: "Профессиональный путь",
 
-      jobPracticeDate: "08/2026 — 11/2026",
-      jobPracticeTitle: "Webentwicklerin (Praktikum)",
-      jobPracticePlace: "New Life New Beginning",
+      jobPracticeTitle: "Веб-разработчица (практика)",
+      jobPracticePlace: "New Life – New Beginning e.V., Рюссельсхайм (удалённо)",
+      jobPracticeTask1: "Редизайн сайта объединения в команде: проанализировала и доработала существующий сайт на WordPress.",
+      jobPracticeTask2: "Разработала блоки в Payload CMS.",
+      jobPracticeTask3: "Верстала шаблоны на HTML, CSS и JavaScript (например, анимации).",
+      jobPracticeTask4: "Работа с дизайнерами (Figma) и тимлидом; задачи в Jira.",
+      jobPracticeTask5: "Тестировала сайт при наполнении контентом и давала обратную связь команде.",
+      jobPracticeTask6: "Участие в разработке новой платформы (в разработке): спроектировала структуру страниц и логику кнопок. Несколько моих идей компонентов команда взяла в работу.",
 
-      job1Data: "07/2025 — 05/2026",
-      job1: "Webentwicklung & KI-Integration",
-      job1Place: "IT Career Hub, Berlin",
-      job1Task1: "Intensivtraining: HTML5, CSS3, JavaScript (ES6+), React, Node.js.",
-      job1Task2: "Webdienste mit Integration von KI-Lösungen (OpenAI API).",
-      job1Task3: "Projektentwicklung nach modernen deutschen IT-Marktstandards.",
+      job1: "Курс веб-разработки с AI",
+      job1Place: "IT Career Hub GmbH, Берлин",
+      job1Task1: "1 520 академических часов, аккредитация AZAV. Сертификат от 22.05.2026.",
+      job1Task2: "Темы: HTML, CSS, JavaScript, React, Node.js, TypeScript, Docker и облачные технологии.",
+      job1Task3: "Проекты: ICHGram, My Pet Shop, Events Platform и HOTSAUCE Conference. Профильные модули сданы на «sehr gut» (отлично).",
 
-      job2: "Sprachstudium & Integration in Deutschland",
-      job2Place: "KEB / CEB Akademien, Dillingen/Merzig",
-      job2Task1: "Konsequentes Deutschlernen in zertifizierten Akademien.",
-      job2Task2: "Ausbau beruflicher Kommunikation und Dokumentation für IT.",
+      jobBew: "Поиск работы",
 
-      job3: "Senior-Dozentin, IT-Abteilung",
-      job3Place: "Azov Maritime Institute, Mariupol, Ukraine",
-      job3Task1: "Entwicklung von Lehrplänen und Lehrmaterialien für IT-Fächer.",
-      job3Task2: "Vorlesungen und Übungen (MS Office, Google Workspace, MathCAD).",
-      job3Task3: "Autorin wissenschaftlicher Artikel in Fachzeitschriften.",
-      job3Task4: "Optimierung des Lehrprozesses durch Cloud-Tools.",
+      job2: "Курсы немецкого и интеграция",
+      job2Place: "KEB Dillingen, CEB Akademie Merzig, gaertner hkk Dillingen",
+      job2Task1: "Интеграционный курс и курсы немецкого до уровня B2.",
+      job2Task2: "Профессиональная ориентация на рынке труда IT.",
 
-      job4: "Senior-Dozentin, Biomedizintechnik",
-      job4Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
-      job4Task1: "Vorlesungen über digitale Technologien und Telemedizin (Python, MATLAB).",
-      job4Task2: "Betreuung von Abschlussprojekten und akademisches Mentoring.",
-      job4Task3: "Teilnahme an Akkreditierungen: Dokumentation und Berichte.",
-      job4Task4: "Jurymitglied der Kleinen Akademie der Wissenschaften (Medizin, Biologie, Ökologie).",
-      job4Task5: "Einführung von Cloud-Collaboration-Tools zur Organisation gemeinsamer Projektaktivitäten, für schnelles Feedback und zur Automatisierung der Lernkontrolle.",
+      job3: "Старший преподаватель, кафедра ИТ",
+      job3Place: "Приазовский морской институт Национального университета «Одесская морская академия», Мариуполь, Украина",
+      job3Task1: "Преподавание информационных технологий (Access, Excel, Google Workspace, MathCAD).",
+      job3Task2: "Разработка учебных планов, программ и методических материалов.",
+      job3Task3: "Экзаменатор. Автор научных статей в профильных изданиях.",
+      job3Task4: "Внедрение Google Workspace и MS Office в учебный процесс для совместной работы студентов.",
 
-      job5: "Familienzeit & IT-Selbststudium",
-      job5Task1: "Selbststudium der IT-Grundlagen (HTML, CSS, Programmierung).",
-      job5Task2: "Entwicklung von Lehrmaterialien für die Hochschulbildung.",
+      job4: "Старший преподаватель кафедры биомедицинской инженерии",
+      job4Place: "Приазовский государственный технический университет, Мариуполь, Украина",
+      job4Task1: "Преподавание: телемедицинские системы, диагностическая и лечебная аппаратура, микропроцессорная техника, сетевые технологии, Python, MATLAB.",
+      job4Task2: "Руководство дипломными работами и наставничество студентов.",
+      job4Task3: "Самостоятельная подготовка документации для аккредитации и сертификации образовательных программ.",
+      job4Task4: "Член жюри Малой академии наук (медицина, биология, экология).",
+      job4Task5: "Внедрение облачных инструментов для проектной работы, обратной связи и контроля знаний.",
+      job4Task6: "Заместитель декана по воспитательной работе, факультет информационных технологий.",
 
-      job6: "Senior-Dozentin / Laborassistentin",
-      job6Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
-      job6Task1: "Arbeit mit ausländischen Studierenden: Vorlesungen und Praktika (Python, SQL).",
-      job6Task2: "Erstellung von Lehrmaterialien für Informationstechnologien.",
-      job6Task3: "Beförderung von der Laborassistentin zur IT-Dozentin.",
+      job5: "Семейный период и самообразование в IT",
+      job5Task1: "Самостоятельное изучение основ IT (HTML, CSS, основы программирования).",
+      job5Task2: "Разработка учебных материалов для работы в вузе.",
 
-      educationTitle: "Bildung",
-      edu1: "Postgraduales Studium",
-      edu1Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
-      edu2: "Spezialistin für Informatik & Angewandte Mathematik",
-      edu2Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
-      edu3: "Bachelor in Angewandter Mathematik",
-      edu3Place: "Pryazovskyi Staatliche Technische Universität, Mariupol",
+      job6: "Старший лаборант, затем преподаватель информатики",
+      job6Place: "Приазовский государственный технический университет, Мариуполь, Украина",
+      job6Task1: "Практические занятия и лекции для иностранных студентов (Python, Access, SQL, Excel, LAN, TCP/IP).",
+      job6Task2: "Подготовка учебных материалов по информатике.",
+      job6Task3: "Путь от лаборанта до преподавателя информатики.",
 
-      langTitle: "Sprachen",
-      extraSkillsTitle: "Zusätzlich",
-      langBtn: "Sprachkenntnisse",
-      lang1: "Deutsch (B2/C1).",
-      lang2: "Englisch (B1).",
-      lang3: "Ukrainisch / Russisch (Muttersprache).",
+      educationTitle: "Образование",
+      edu1: "Аспирантура (не завершена)",
+      edu1Place: "Приазовский государственный технический университет, Мариуполь, Украина",
+      edu2: "Специалист по информатике и прикладной математике",
+      edu2Place: "Приазовский государственный технический университет, Мариуполь, Украина · диплом с отличием; по оценке ZAB соответствует магистру",
+      edu3: "Бакалавр прикладной математики",
+      edu3Place: "Приазовский государственный технический университет, Мариуполь, Украина",
 
-      volTitle: "Ehrenamtliches Engagement",
-      jobVolunteerDate: "Seit 11/2026",
-      jobVolunteerTitle: "Berufliches Engagement",
-      jobVolunteerPlace: "New Life New Beginning",
-      jobVolunteerTask1: "Seit November 2026 setze ich meine Zusammenarbeit mit New Life New Beginning ehrenamtlich als Webentwicklerin fort und unterstütze mit meinen beruflichen Fähigkeiten die Weiterentwicklung der Projekte.",
+      langTitle: "Языки",
+      extraSkillsTitle: "Дополнительно",
+      langBtn: "Владение языками",
+      lang1: "Немецкий: B2 (telc Deutsch-Test für den Beruf, 06/2024)",
+      lang2: "Английский: B1",
+      lang3: "Украинский и русский: родные",
 
-      volSocialDate: "Seit 2022",
-      volBtn: "Soziales Engagement",
-      volText: "Seit 2022 — aktive ehrenamtliche Unterstützung bei der Organisation und Arbeit des Gute Zweck Laden in Schmelz, Deutschland.",
+      jobVolunteerDate: "С 11/2026",
+      jobVolunteerTitle: "Веб-разработчица (волонтёр)",
+      jobVolunteerPlace: "New Life – New Beginning e.V.",
+      jobVolunteerTask1: "После практики продолжаю работать над веб-проектами объединения на добровольной основе.",
 
-      modalDescTitle: "Projektbeschreibung:",
-      modalFeaturesTitle: "Wichtigste Projektmerkmale:",
-      btnDetails: "Details →",
+      volSocialDate: "С 06/2022",
+      volBtn: "Социальная деятельность",
+      volText: "Помогаю на добровольной основе в «Gute Zweck Laden» в Шмельце (коммуникация и организация).",
+
+      modalDescTitle: "Описание проекта:",
+      modalFeaturesTitle: "Ключевые особенности проекта:",
+
+      metaTitle: "Natalia Bouhlal | Веб-разработчица",
+      metaDescription: "Портфолио Натальи Бухляль, junior full-stack разработчицы из Эппельборна (Саар, Германия). Проекты на React, TypeScript, Node.js и MongoDB, резюме и контакты.",
+      ariaPrev: "Предыдущий проект",
+      ariaNext: "Следующий проект",
+      liveLabel: "Демо",
 
       projects: [
         {
-          title: "My Pet Shop",
-          desc: "Entwicklung einer E-Commerce-Lösung für einen Zoofachhandel. Entwurf einer React-Architektur, Gewährleistung nahtloser Navigation und Implementierung komplexer Warenkorb-Logik.",
+          title: "ICHGram",
+          desc: "Социальная сеть для обмена фотографиями, разработанная как full-stack приложение на React, TypeScript и Node.js. Пользователи создают профиль, публикуют фото, ставят лайки, комментируют, подписываются на других и общаются в чате в реальном времени.",
           highlights: [
-            "<strong>State Management:</strong> Redux Toolkit zur globalen Statusverwaltung implementiert.",
-            "<strong>API-Integration:</strong> Optimierter Datentransfer über Axios mit Fehlerbehandlung.",
-            "<strong>Routing:</strong> Mehrstufiges Routing-System mit dynamischen Segmenten.",
-            "<strong>Automatisierung:</strong> Automatisierte Validierung von Bestellformularen.",
-            "<strong>Performance:</strong> Refactoring zur Vermeidung unnötiger Renders."
+            "<strong>Вход в систему:</strong> регистрация, логин и JWT-аутентификация. Пароли хешируются с помощью bcrypt.",
+            "<strong>Социальные функции:</strong> профили, публикации фото, лайки, комментарии, подписки и уведомления.",
+            "<strong>Чат в реальном времени:</strong> сообщения и обновление чатов через Socket.IO.",
+            "<strong>Хранение изображений:</strong> фото публикаций и аватары хранятся в Cloudinary.",
+            "<strong>Развёртывание:</strong> приложение размещено на Render, данные хранятся в MongoDB Atlas."
+          ]
+        },
+        {
+          title: "My Pet Shop",
+          desc: "Интернет-магазин для зоомагазина на React: каталог товаров, корзина, избранное и фильтры.",
+          highlights: [
+            "<strong>State Management:</strong> глобальное состояние на Redux Toolkit (корзина, избранное, фильтры).",
+            "<strong>Работа с API:</strong> получение данных через Axios, перехватчики (interceptors) и обработка ошибок.",
+            "<strong>Маршрутизация:</strong> несколько страниц на React Router, в том числе динамические карточки товаров.",
+            "<strong>Формы:</strong> проверка данных заказа с помощью Formik и Yup.",
+            "<strong>Производительность и UX:</strong> меньше лишних рендеров, интерфейс адаптирован под все размеры экранов."
           ]
         },
         {
           title: "Events Platform",
-          desc: "Mehrseitige Plattform für die Event-Suche. Implementierung eines dynamischen Filtersystems und Gestaltung einer intuitiven User Journey.",
+          desc: "Многостраничный сайт для поиска и бронирования мероприятий с интерактивной картой и фильтрами.",
           highlights: [
-            "<strong>Filterung:</strong> Logik zur Event-Auswahl nach 4 Kriterien.",
-            "<strong>Architektur:</strong> Strenge BEM-Methodik für UI-Komponenten.",
-            "<strong>Karte:</strong> Integration der Leaflet API zur Visualisierung.",
-            "<strong>SEO:</strong> Optimiertes semantisches HTML5 für die Indexierung."
+            "<strong>Фильтры:</strong> отбор мероприятий по четырём критериям: тип, формат (расстояние), категория и дата.",
+            "<strong>БЭМ:</strong> понятные названия CSS-классов для переиспользуемых компонентов.",
+            "<strong>Сборка:</strong> SCSS и Gulp для быстрой и аккуратной разработки.",
+            "<strong>Карта:</strong> места мероприятий на карте Leaflet.",
+            "<strong>SEO:</strong> семантический HTML5 и адаптивная вёрстка для смартфонов и десктопа."
           ]
         },
         {
           title: "HOTSAUCE Conference",
-          desc: "Professionelle Landingpage für die HOTSAUCE Tech-Konferenz mit Fokus auf saubere Architektur und komplexes Layout.",
+          desc: "Адаптивный лендинг для технологической конференции: спикеры, программа, цены и FAQ.",
           highlights: [
-            "<strong>BEM:</strong> Modulare Codestruktur für saubere Stile.",
-            "<strong>Layout:</strong> Komplexes adaptives Raster (Grid/Flex).",
-            "<strong>UI:</strong> Interaktive FAQ-Akkordeons und CSS-Animationen."
+            "<strong>БЭМ:</strong> модульный CSS с независимыми компонентами.",
+            "<strong>Layout:</strong> сетка для спикеров и расписания на CSS Grid и Flexbox.",
+            "<strong>Оформление:</strong> эффект «билета» на псевдоэлементах (::before, ::after) и SVG.",
+            "<strong>Интерактив:</strong> FAQ-аккордеон и уведомления на JavaScript с CSS-анимациями.",
+            "<strong>Адаптивность:</strong> проверено на пяти размерах экрана (от 390 до 1920 px). Gulp, SCSS и семантический HTML5."
           ]
         },
         {
           title: "ICHGram",
-          desc: "Ein Full-Stack-soziales Netzwerk zum Teilen von Fotos und zur Kommunikation. Nutzer können Konten erstellen, Fotos veröffentlichen, mit Beiträgen interagieren, anderen Nutzern folgen und in Echtzeit Nachrichten austauschen.",
+          desc: "Социальная сеть для обмена фотографиями, разработанная как full-stack приложение на React, TypeScript и Node.js. Пользователи создают профиль, публикуют фото, ставят лайки, комментируют, подписываются на других и общаются в чате в реальном времени.",
           highlights: [
-            "<strong>Authentifizierung:</strong> Registrierung, Anmeldung und JWT-basierte Authentifizierung mit Passwort-Hashing durch bcrypt implementiert.",
-            "<strong>Soziale Funktionen:</strong> Nutzerprofile, Fotobeiträge, Likes, Kommentare, Abonnements und Benachrichtigungen entwickelt.",
-            "<strong>Echtzeitkommunikation:</strong> Socket.IO für Echtzeitnachrichten und Chat-Aktualisierungen integriert.",
-            "<strong>Cloud-Bildspeicherung:</strong> Cloudinary zur Speicherung von Beitragsbildern und Profilavataren integriert.",
-            "<strong>Deployment:</strong> Anwendung auf Render bereitgestellt; MongoDB Atlas dient als Produktionsdatenbank."
-          ]
-        },
-        {
-          title: "My Pet Shop",
-          desc: "Entwicklung einer E-Commerce-Lösung für einen Zoofachhandel. Entwurf einer React-Architektur, Gewährleistung nahtloser Navigation und Implementierung komplexer Warenkorb-Logik.",
-          highlights: [
-            "<strong>State Management:</strong> Redux Toolkit zur globalen Statusverwaltung implementiert.",
-            "<strong>API-Integration:</strong> Optimierter Datentransfer über Axios mit Fehlerbehandlung.",
-            "<strong>Routing:</strong> Mehrstufiges Routing-System mit dynamischen Segmenten.",
-            "<strong>Automatisierung:</strong> Automatisierte Validierung von Bestellformularen.",
-            "<strong>Performance:</strong> Refactoring zur Vermeidung unnötiger Renders."
+            "<strong>Вход в систему:</strong> регистрация, логин и JWT-аутентификация. Пароли хешируются с помощью bcrypt.",
+            "<strong>Социальные функции:</strong> профили, публикации фото, лайки, комментарии, подписки и уведомления.",
+            "<strong>Чат в реальном времени:</strong> сообщения и обновление чатов через Socket.IO.",
+            "<strong>Хранение изображений:</strong> фото публикаций и аватары хранятся в Cloudinary.",
+            "<strong>Развёртывание:</strong> приложение размещено на Render, данные хранятся в MongoDB Atlas."
           ]
         }
       ]
@@ -534,12 +581,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const typingPhrases = {
-    de: "Deine zukünftige Webentwicklerin",
-    en: "Your future web developer",
-    ru: "Твой будущий разработчик сайтов"
+    de: "Deine Webentwicklerin",
+    en: "Your web developer",
+    ru: "Твоя веб-разработчица"
   };
 
-  // === 3. ЭФФЕКТ ПЕЧАТИ ===
+  // === ЭФФЕКТ ПЕЧАТИ ===
   function typeEffect() {
     if (!typingEl) return;
 
@@ -565,15 +612,16 @@ document.addEventListener("DOMContentLoaded", () => {
     typingTimeout = setTimeout(typeEffect, delta);
   }
 
-  // === 4. ФУНКЦИЯ СМЕНЫ ЯЗЫКА ===
+  // === СМЕНА ЯЗЫКА ===
   function setLanguage(lang) {
     currentLang = lang;
     document.body.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang;
 
     const langData = translations[lang];
     if (!langData) return;
 
-    // 1. Перевод простых элементов по ID
+    // 1. Тексты по id
     for (const key in langData) {
       if (key === 'projects') continue;
 
@@ -588,7 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // === ОБНОВЛЕНИЕ ЭЛЕМЕНТОВ С data-key (для бургер-меню) ===
+    // 2. Пункты меню (data-key)
     document.querySelectorAll("[data-key]").forEach(el => {
       const key = el.getAttribute("data-key");
 
@@ -603,7 +651,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 2. ОБНОВЛЕНИЕ ПЕРЕВОДОВ КАРТОЧЕК ПРОЕКТОВ
+    // 3. Заголовок страницы, описание, aria-подписи
+    document.title = langData.metaTitle;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', langData.metaDescription);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', langData.metaTitle);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', langData.metaDescription);
+    const prevBtnEl = document.getElementById('prevBtn');
+    const nextBtnEl = document.getElementById('nextBtn');
+    if (prevBtnEl) prevBtnEl.setAttribute('aria-label', langData.ariaPrev);
+    if (nextBtnEl) nextBtnEl.setAttribute('aria-label', langData.ariaNext);
+
+    // 4. Карточки проектов
     const projectCards = document.querySelectorAll(".project-card");
     const projectsTranslations = langData.projects;
 
@@ -612,28 +673,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!projectsTranslations[index]) return;
 
         const liveBtn = card.querySelector(".btn-live");
-
-        if (liveBtn) {
-          liveBtn.textContent =
-            lang === "ru" ? "Демо" :
-            lang === "en" ? "Live Demo" :
-            "Live-Demo";
-        }
+        if (liveBtn) liveBtn.textContent = langData.liveLabel;
 
         const titleEl = card.querySelector("h3");
-
-        if (titleEl) {
-          titleEl.textContent = projectsTranslations[index].title;
-        }
+        if (titleEl) titleEl.textContent = projectsTranslations[index].title;
 
         const hiddenDesc = card.querySelector(".modal-desc-text");
-
-        if (hiddenDesc) {
-          hiddenDesc.innerHTML = projectsTranslations[index].desc;
-        }
+        if (hiddenDesc) hiddenDesc.innerHTML = projectsTranslations[index].desc;
 
         const highlightsData = card.querySelector(".modal-highlights-data");
-
         if (highlightsData && projectsTranslations[index].highlights) {
           highlightsData.innerHTML = projectsTranslations[index].highlights
             .map(h => `<li class="feature-small">${h}</li>`)
@@ -642,7 +690,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 3. Синхронизация текста кнопок аккордеона
+    // 5. Кнопки аккордеона
     document.querySelectorAll(".lang-accordion-btn").forEach(btn => {
       const isActive = btn.classList.contains('active');
       const text = isActive ? langData.accordionBtnClose : langData.accordionBtn;
@@ -651,14 +699,14 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.innerHTML = `${text} <span class="icon-arrow">${arrow}</span>`;
     });
 
-    // 4. Перезапуск эффекта печати
+    // 6. Перезапуск эффекта печати
     charIndex = 0;
     isDeleting = false;
     clearTimeout(typingTimeout);
     typeEffect();
   }
 
-  // === 5. ЛОГИКА АККОРДЕОНА ===
+  // === АККОРДЕОН ===
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('.lang-accordion-btn');
     if (!btn) return;
@@ -678,7 +726,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.innerHTML = `${text} <span class="icon-arrow">${arrow}</span>`;
   }, true);
 
-  // === 6. ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА (UI) ===
+  // === ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА (UI) ===
   if (selected && optionItems) {
     selected.onclick = (e) => {
       e.stopPropagation();
